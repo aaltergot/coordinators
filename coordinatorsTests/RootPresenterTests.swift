@@ -9,21 +9,21 @@
 import XCTest
 @testable import coordinators
 
-fileprivate class RootCoordinatorStub: RootCoordinator {
+fileprivate class RootRouterStub: RootRouter {
 
     var showTabBarCalled = false
     var showLoginCalled = false
 
-    func showTabBar(animated: Bool) {
-        showTabBarCalled = true
-    }
-    
-    func showLogin(animated: Bool) {
-        showLoginCalled = true
+    func openTabBar(
+        feedTabInOut: @escaping FeedTabInOut,
+        profileTabInOut: @escaping ProfileTabInOut,
+        tabBarInOut: @escaping TabBarInOut
+    ) {
+        self.showTabBarCalled = true
     }
 
-    func start(animated: Bool) {
-        
+    func openLogin(_ inOut: @escaping LoginInOut) {
+        self.showLoginCalled = true
     }
 }
 
@@ -51,32 +51,34 @@ fileprivate class LoginServiceStub: LoginService {
 class RootPresenterTests: XCTestCase {
     
     fileprivate var loginServiceStub: LoginServiceStub!
-    fileprivate var rootCoordinatorStub: RootCoordinatorStub!
+    fileprivate var rootRouterStub: RootRouterStub!
     var rootPresenter: RootPresenter!
     
     override func setUp() {
         loginServiceStub = LoginServiceStub()
-        rootCoordinatorStub = RootCoordinatorStub()
-        rootPresenter = RootPresenterImpl(
-            loginService: loginServiceStub,
-            coordinator: rootCoordinatorStub
+        rootRouterStub = RootRouterStub()
+        rootPresenter = RootPresenter(
+            viewIn: nil,
+            interactor: RootInteractorImpl(loginService: self.loginServiceStub),
+            router: self.rootRouterStub,
+            inOut: { _ in nil}
         )
     }
-    
+
     override func tearDown() {
         loginServiceStub = nil
-        rootCoordinatorStub = nil
+        rootRouterStub = nil
         rootPresenter = nil
     }
     
     func testUnauthorized() {
         rootPresenter.viewDidLoad()
-        XCTAssertEqual(rootCoordinatorStub.showLoginCalled, true)
+        XCTAssertEqual(rootRouterStub.showLoginCalled, true)
     }
     
     func testAuthorized() {
         loginServiceStub.login()
         rootPresenter.viewDidLoad()
-        XCTAssertEqual(rootCoordinatorStub.showTabBarCalled, true)
+        XCTAssertEqual(rootRouterStub.showTabBarCalled, true)
     }
 }
