@@ -3,9 +3,14 @@ import UIKit
 class ProfileTabAssembly {
 
     let profileAssembly: ProfileAssembly
+    let settingsAssembly: SettingsAssembly
 
-    init(profileAssembly: ProfileAssembly) {
+    init(
+        profileAssembly: ProfileAssembly,
+        settingsAssembly: SettingsAssembly
+    ) {
         self.profileAssembly = profileAssembly
+        self.settingsAssembly = settingsAssembly
     }
 
     func createModule(

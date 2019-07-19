@@ -6,6 +6,7 @@ protocol ProfileIn: class {
 }
 
 protocol ProfileOut: class {
+    func profileOpenSettings()
 }
 
 typealias ProfileInOut = (ProfileIn) -> ProfileOut?
@@ -25,5 +26,4 @@ typealias ProfileViewType = UIViewController
 // Mark: - Router
 
 protocol ProfileRouter: class {
-    func openSettings(_ inOut: @escaping SettingsInOut)
 }

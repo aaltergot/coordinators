@@ -11,7 +11,6 @@
 		178560831DB92E6FE0F1E2F0 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856D427EF64FEB85BA8795 /* LoginInteractor.swift */; };
 		17856219E00C68CF0D90374B /* ProfileTabProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178568B04999935EC176F080 /* ProfileTabProtocols.swift */; };
 		178562FEF6B40D04258A9D04 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17856B220FCF4571F4454F18 /* LoginView.xib */; };
-		1785634CFE4A8A45A687B438 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856931789F72C5BA2698C8 /* ProfileRouter.swift */; };
 		178563B63A58EB4E24DB9335 /* FeedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785644C455B4F73929164B7 /* FeedProtocols.swift */; };
 		1785642D5390048BB3CFF2CD /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856729D58E8CC1725DB887 /* LoginPresenter.swift */; };
 		1785647FD97749F0F964B317 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785633EDB95672657AD0050 /* LoginView.swift */; };
@@ -88,7 +87,6 @@
 		178567A6DB6F0856AF539A2D /* LoginAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		178568B04999935EC176F080 /* ProfileTabProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabProtocols.swift; sourceTree = "<group>"; };
 		1785692AB373709E2B73C255 /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
-		17856931789F72C5BA2698C8 /* ProfileRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		178569585E8C5BF114D797B1 /* ProfileTabPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabPresenter.swift; sourceTree = "<group>"; };
 		17856970A024CA6E38FBBCF4 /* FeedTabProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTabProtocols.swift; sourceTree = "<group>"; };
 		17856992B83BA90820B6C281 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -311,7 +309,6 @@
 				41E5655322885B5A007ECBCC /* ProfileView.swift */,
 				41E5655422885B5A007ECBCC /* ProfileView.xib */,
 				17856B3E3AA76C963B8A20B1 /* ProfileProtocols.swift */,
-				17856931789F72C5BA2698C8 /* ProfileRouter.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -446,7 +443,6 @@
 				178563B63A58EB4E24DB9335 /* FeedProtocols.swift in Sources */,
 				1785661EA049CC25CAA5D495 /* ProfileProtocols.swift in Sources */,
 				178567F2481C27CEB640DDB7 /* SettingsProtocols.swift in Sources */,
-				1785634CFE4A8A45A687B438 /* ProfileRouter.swift in Sources */,
 				17856A8AB19D8F8CA2FB2DFB /* SettingsInteractor.swift in Sources */,
 				1785654E02F02F0B67BE493F /* FeedTabRouter.swift in Sources */,
 				17856E3E0E5654F7E9EC89AC /* FeedTabPresenter.swift in Sources */,

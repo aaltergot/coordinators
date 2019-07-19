@@ -40,10 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RootOut {
                     feedAssembly: FeedAssembly()
                 ),
                 profileTabAssembly: ProfileTabAssembly(
-                    profileAssembly: ProfileAssembly(
-                        settingsAssembly: SettingsAssembly(
-                            loginService: loginService
-                        )
+                    profileAssembly: ProfileAssembly(),
+                    settingsAssembly: SettingsAssembly(
+                        loginService: loginService
                     )
                 )
             ),

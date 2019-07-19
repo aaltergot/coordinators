@@ -25,4 +25,5 @@ typealias ProfileTabViewType = UINavigationController
 
 protocol ProfileTabRouter: class {
     func openProfile(_ inOut: @escaping ProfileInOut)
+    func openSettings(_ inOut: @escaping SettingsInOut)
 }
