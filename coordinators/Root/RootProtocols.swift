@@ -2,7 +2,12 @@ import UIKit
 
 // Mark: - Module
 
+enum RootInCommand {
+    case processDeepLink(String)
+}
+
 protocol RootIn: class {
+    func handle(_ command: RootInCommand)
 }
 
 protocol RootOut: class {

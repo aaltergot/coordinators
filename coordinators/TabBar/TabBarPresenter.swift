@@ -13,8 +13,15 @@ class TabBarPresenter: TabBarIn, TabBarViewOut {
         self.inOut = inOut
     }
 
-    func viewDidLoad() {
+    func viewCreated() {
         self.out = self.inOut(self)
+    }
+
+    func handle(_ command: TabBarCommand) {
+        switch command {
+        case let .showTab(tab):
+            self.viewIn?.showTab(tab)
+        }
     }
 }
 

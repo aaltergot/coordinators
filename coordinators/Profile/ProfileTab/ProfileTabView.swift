@@ -19,6 +19,6 @@ class ProfileTabView: ProfileTabViewType, ProfileTabViewIn {
     }
 
     private func setupView() {
-        self.title = "ProfileTab"
+        self.title = "Profile"
     }
 }

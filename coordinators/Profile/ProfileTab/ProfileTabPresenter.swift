@@ -6,6 +6,8 @@ class ProfileTabPresenter: ProfileTabIn, ProfileTabViewOut {
     private let inOut: ProfileTabInOut
     private weak var out: ProfileTabOut?
 
+    private weak var settingsIn: SettingsIn?
+
     init(
         viewIn: ProfileTabViewIn?,
         router: ProfileTabRouter,
@@ -20,11 +22,30 @@ class ProfileTabPresenter: ProfileTabIn, ProfileTabViewOut {
         self.out = self.inOut(self)
         self.router.openProfile { [weak self] _ in return self }
     }
+
+    func handle(_ command: ProfileTabInCommand) {
+        switch command {
+        case let .processDeepLink(deepLink):
+            let split = deepLink.split(separator: "/")
+            if split.first == "settings" {
+                if settingsIn == nil {
+                    self.openSettings()
+                }
+            }
+        }
+    }
+
+    private func openSettings() {
+        self.router.openSettings { [weak self] settingsIn in
+            self?.settingsIn = settingsIn
+            return self
+        }
+    }
 }
 
 extension ProfileTabPresenter: ProfileOut {
     func profileOpenSettings() {
-        self.router.openSettings { [weak self] _ in return self }
+        self.openSettings()
     }
 }
 

@@ -19,6 +19,6 @@ class FeedTabView: FeedTabViewType, FeedTabViewIn {
     }
 
     private func setupView() {
-        self.title = "FeedTab"
+        self.title = "Feed"
     }
 }

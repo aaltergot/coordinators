@@ -19,12 +19,12 @@ class TabBarAssembly {
         tabBarInOut: @escaping TabBarInOut
     ) -> TabBarViewType {
 
-        let tabs = [
-            self.feedTabAssembly.createModule(feedTabInOut),
-            self.profileTabAssembly.createModule(profileTabInOut)
+        let tabs: [(TabBarTab, UIViewController)] = [
+            (.feed, self.feedTabAssembly.createModule(feedTabInOut)),
+            (.profile, self.profileTabAssembly.createModule(profileTabInOut))
         ]
 
-        return TabBarView(viewControllers: tabs) { view in
+        return TabBarView(tabs: tabs) { view in
             return TabBarPresenter(viewIn: view, inOut: tabBarInOut)
         }
     }

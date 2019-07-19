@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RootOut {
 
     var window: UIWindow?
     private var rootAssembly: RootAssembly?
+    private var rootIn: RootIn?
 
     func application(
         _ application: UIApplication,
@@ -21,7 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RootOut {
         let window = UIWindow(frame: UIScreen.main.bounds)
         let rootAssembly = self.makeRootAssembly()
 
-        window.rootViewController = rootAssembly.createModule { [weak self] _ in return self }
+        window.rootViewController = rootAssembly.createModule { [weak self] rootIn in
+            self?.rootIn = rootIn
+            return self
+        }
         window.makeKeyAndVisible()
 
         self.window = window
@@ -62,8 +66,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RootOut {
 
     }
 
+    private var evenActivation = false
     func applicationDidBecomeActive(_ application: UIApplication) {
-
+        if (self.evenActivation) {
+            self.rootIn?.handle(.processDeepLink("profile/settings"))
+        } else {
+            self.rootIn?.handle(.processDeepLink("feed"))
+        }
+        self.evenActivation = !self.evenActivation
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

@@ -19,9 +19,8 @@ class ProfileTabRouterImpl: ProfileTabRouter {
         nc.setViewControllers([self.assembly.profileAssembly.createModule(inOut)], animated: false)
     }
 
-
     func openSettings(_ inOut: @escaping SettingsInOut) {
         guard let nc = self.navigationController else { return }
-        nc.pushViewController(self.assembly.settingsAssembly.createModule(inOut), animated: false)
+        nc.pushViewController(self.assembly.settingsAssembly.createModule(inOut), animated: true)
     }
 }

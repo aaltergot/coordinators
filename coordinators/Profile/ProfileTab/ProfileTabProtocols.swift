@@ -2,7 +2,12 @@ import UIKit
 
 // Mark: - Module
 
+enum ProfileTabInCommand {
+    case processDeepLink(String)
+}
+
 protocol ProfileTabIn: class {
+    func handle(_ command: ProfileTabInCommand)
 }
 
 protocol ProfileTabOut: class {
