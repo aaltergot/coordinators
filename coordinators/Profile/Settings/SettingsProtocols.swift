@@ -2,13 +2,15 @@ import UIKit
 
 // Mark: - Module
 
-protocol SettingsIn: class {
+enum SettingsInCmd {
 }
 
-protocol SettingsOut: class {
+enum SettingsOutCmd {
+    case register(SettingsIn)
 }
 
-typealias SettingsInOut = (SettingsIn) -> SettingsOut?
+typealias SettingsIn = ModuleIn<SettingsInCmd>
+typealias SettingsOut = (SettingsOutCmd) -> Void
 
 // Mark: - View
 

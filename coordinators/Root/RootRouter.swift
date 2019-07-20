@@ -15,21 +15,21 @@ class RootRouterImpl: RootRouter {
     }
 
     func openTabBar(
-        feedTabInOut: @escaping FeedTabInOut,
-        profileTabInOut: @escaping ProfileTabInOut,
-        tabBarInOut: @escaping TabBarInOut
+        feedTabOut: @escaping FeedTabOut,
+        profileTabOut: @escaping ProfileTabOut,
+        tabBarOut: @escaping TabBarOut
     ) {
         guard let nc = self.navigationController else { return }
         let tabBarView = self.assembly.tabBarAssembly.createModule(
-            feedTabInOut: feedTabInOut,
-            profileTabInOut: profileTabInOut,
-            tabBarInOut: tabBarInOut
+            feedTabOut: feedTabOut,
+            profileTabOut: profileTabOut,
+            tabBarOut: tabBarOut
         )
         nc.setViewControllers([tabBarView], animated: true)
     }
 
-    func openLogin(_ inOut: @escaping LoginInOut) {
+    func openLogin(_ out: @escaping LoginOut) {
         guard let nc = self.navigationController else { return }
-        nc.setViewControllers([self.assembly.loginAssembly.createModule(inOut)], animated: true)
+        nc.setViewControllers([self.assembly.loginAssembly.createModule(out)], animated: true)
     }
 }

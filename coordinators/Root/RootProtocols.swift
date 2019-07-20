@@ -2,18 +2,16 @@ import UIKit
 
 // Mark: - Module
 
-enum RootInCommand {
+enum RootInCmd {
     case processDeepLink(String)
 }
 
-protocol RootIn: class {
-    func handle(_ command: RootInCommand)
+enum RootOutCmd {
+    case register(RootIn)
 }
 
-protocol RootOut: class {
-}
-
-typealias RootInOut = (RootIn) -> RootOut?
+typealias RootIn = ModuleIn<RootInCmd>
+typealias RootOut = (RootOutCmd) -> Void
 
 // Mark: - View
 
@@ -38,10 +36,10 @@ protocol RootInteractor: class {
 protocol RootRouter: class {
 
     func openTabBar(
-        feedTabInOut: @escaping FeedTabInOut,
-        profileTabInOut: @escaping ProfileTabInOut,
-        tabBarInOut: @escaping TabBarInOut
+        feedTabOut: @escaping FeedTabOut,
+        profileTabOut: @escaping ProfileTabOut,
+        tabBarOut: @escaping TabBarOut
     )
 
-    func openLogin(_ inOut: @escaping LoginInOut)
+    func openLogin(_ out: @escaping LoginOut)
 }

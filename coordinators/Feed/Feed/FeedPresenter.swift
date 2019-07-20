@@ -1,19 +1,18 @@
-class FeedPresenter: FeedIn, FeedViewOut {
+class FeedPresenter: FeedViewOut {
 
     private weak var viewIn: FeedViewIn?
 
-    private let inOut: FeedInOut
-    private weak var out: FeedOut?
+    private let out: FeedOut
 
     init(
         viewIn: FeedViewIn?,
-        inOut: @escaping FeedInOut
+        out: @escaping FeedOut
     ) {
         self.viewIn = viewIn
-        self.inOut = inOut
+        self.out = out
     }
 
     func viewDidLoad() {
-        self.out = self.inOut(self)
+        self.out(.loaded { _ in })
     }
 }

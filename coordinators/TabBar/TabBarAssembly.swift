@@ -14,18 +14,18 @@ class TabBarAssembly {
     }
 
     func createModule(
-        feedTabInOut: @escaping FeedTabInOut,
-        profileTabInOut: @escaping ProfileTabInOut,
-        tabBarInOut: @escaping TabBarInOut
+        feedTabOut: @escaping FeedTabOut,
+        profileTabOut: @escaping ProfileTabOut,
+        tabBarOut: @escaping TabBarOut
     ) -> TabBarViewType {
 
         let tabs: [(TabBarTab, UIViewController)] = [
-            (.feed, self.feedTabAssembly.createModule(feedTabInOut)),
-            (.profile, self.profileTabAssembly.createModule(profileTabInOut))
+            (.feed, self.feedTabAssembly.createModule(feedTabOut)),
+            (.profile, self.profileTabAssembly.createModule(profileTabOut))
         ]
 
         return TabBarView(tabs: tabs) { view in
-            return TabBarPresenter(viewIn: view, inOut: tabBarInOut)
+            return TabBarPresenter(viewIn: view, out: tabBarOut)
         }
     }
 }

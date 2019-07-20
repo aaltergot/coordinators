@@ -1,15 +1,14 @@
-class RootPresenter: RootIn, RootViewOut {
+class RootPresenter: RootViewOut {
 
     private weak var viewIn: RootViewIn?
     private let interactor: RootInteractor
     private let router: RootRouter
 
-    private let inOut: RootInOut
-    private weak var out: RootOut?
+    private let out: RootOut
 
-    private weak var tabBarIn: TabBarIn?
-    private weak var feedTabIn: FeedTabIn?
-    private weak var profileTabIn: ProfileTabIn?
+    private var tabBarIn: TabBarIn?
+    private var feedTabIn: FeedTabIn?
+    private var profileTabIn: ProfileTabIn?
 
     private var deferredDeepLink: String? = nil
 
@@ -17,12 +16,12 @@ class RootPresenter: RootIn, RootViewOut {
         viewIn: RootViewIn?,
         interactor: RootInteractor,
         router: RootRouter,
-        inOut: @escaping RootInOut
+        out: @escaping RootOut
     ) {
         self.viewIn = viewIn
-        self.inOut = inOut
         self.interactor = interactor
         self.router = router
+        self.out = out
     }
 
     func viewDidLoad() {
@@ -33,73 +32,73 @@ class RootPresenter: RootIn, RootViewOut {
             self.openLogin()
         }
 
-        self.out = self.inOut(self)
+        self.out(.register(RootIn(ref: self) { [weak self] cmd in self?.invoke(cmd) }))
     }
 
-    func handle(_ command: RootInCommand) {
-        switch command {
-        case let .processDeepLink(deepLink):
-            guard let tabBarIn = self.tabBarIn ,
-                  let profileTabIn = self.profileTabIn,
-                  let _ = self.feedTabIn else {
-                self.deferredDeepLink = deepLink
-                return
+    private func invoke(_ cmd: RootInCmd) { switch cmd {
+    case let .processDeepLink(deepLink): self.processDeepLink(deepLink)
+    }}
+
+    private func processDeepLink(_ deepLink: String) {
+        guard let tabBarIn = self.tabBarIn, tabBarIn.isAlive(),
+              let profileTabIn = self.profileTabIn, profileTabIn.isAlive(),
+              let feedTabIn = self.feedTabIn, feedTabIn.isAlive() else {
+            self.deferredDeepLink = deepLink
+            return
+        }
+        let split = deepLink.split(separator: "/")
+        if split.first == "profile" {
+            tabBarIn.invoke(.showTab(.profile))
+            let rest = split.dropFirst().joined(separator: "/")
+            if !rest.isEmpty {
+                profileTabIn.invoke(.processDeepLink(rest))
             }
-            let split = deepLink.split(separator: "/")
-            if split.first == "profile" {
-                tabBarIn.handle(.showTab(.profile))
-                let rest = split.dropFirst().joined(separator: "/")
-                if !rest.isEmpty {
-                    profileTabIn.handle(.processDeepLink(rest))
-                }
-            } else {
-                tabBarIn.handle(.showTab(.feed))
-            }
-            break
+        } else {
+            tabBarIn.invoke(.showTab(.feed))
         }
     }
 
     private func processDeferredDeepLink() {
         guard let deepLink = self.deferredDeepLink else { return }
         self.deferredDeepLink = nil
-        self.handle(.processDeepLink(deepLink))
+        self.processDeepLink(deepLink)
     }
 
     private func openTabBar() {
         self.router.openTabBar(
-            feedTabInOut: { [weak self] feedTabIn in
-                self?.feedTabIn = feedTabIn
-                self?.processDeferredDeepLink()
-                return self
+            feedTabOut: { [weak self] feedTabCmd in
+                guard let self = self else { return }
+
+                switch feedTabCmd {
+                case let .register(feedTabIn):
+                    self.feedTabIn = feedTabIn
+                    self.processDeferredDeepLink()
+                }
             },
-            profileTabInOut: { [weak self] profileTabIn in
-                self?.profileTabIn = profileTabIn
-                self?.processDeferredDeepLink()
-                return self
+            profileTabOut: { [weak self] profileTabCmd in
+                guard let self = self else { return }
+
+                switch profileTabCmd {
+                case let .register(profileTabIn):
+                    self.profileTabIn = profileTabIn
+                    self.processDeferredDeepLink()
+                }
             },
-            tabBarInOut: { [weak self] tabBarIn in
-                self?.tabBarIn = tabBarIn
-                self?.processDeferredDeepLink()
-                return self
+            tabBarOut: { [weak self] tabBarCmd in
+                guard let self = self else { return }
+
+                switch tabBarCmd {
+                case let .register(tabBarIn):
+                    self.tabBarIn = tabBarIn
+                    self.processDeferredDeepLink()
+                }
             }
         )
     }
 
     private func openLogin() {
-        self.router.openLogin { [weak self] _ in return self }
+        self.router.openLogin { _ in }
     }
-}
-
-extension RootPresenter: LoginOut {
-}
-
-extension RootPresenter: TabBarOut {
-}
-
-extension RootPresenter: FeedTabOut {
-}
-
-extension RootPresenter: ProfileTabOut {
 }
 
 extension RootPresenter: LoginDelegate {

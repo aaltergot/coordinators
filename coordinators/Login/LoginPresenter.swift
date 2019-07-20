@@ -1,23 +1,22 @@
-class LoginPresenter: LoginIn, LoginViewOut {
+class LoginPresenter: LoginViewOut {
 
     private weak var viewIn: LoginViewIn?
     private let interactor: LoginInteractor
 
-    private let inOut: LoginInOut
-    private weak var out: LoginOut?
+    private let out: LoginOut
 
     init(
         viewIn: LoginViewIn?,
         interactor: LoginInteractor,
-        inOut: @escaping LoginInOut
+        out: @escaping LoginOut
     ) {
         self.viewIn = viewIn
         self.interactor = interactor
-        self.inOut = inOut
+        self.out = out
     }
 
     func viewDidLoad() {
-        self.out = self.inOut(self)
+        self.out(.register { _ in })
     }
 
     func loginButtonPressed() {

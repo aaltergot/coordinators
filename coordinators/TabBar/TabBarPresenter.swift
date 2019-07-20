@@ -1,32 +1,23 @@
-class TabBarPresenter: TabBarIn, TabBarViewOut {
+class TabBarPresenter: TabBarViewOut {
 
     private weak var viewIn: TabBarViewIn?
 
-    private let inOut: TabBarInOut
-    private weak var out: TabBarOut?
+    private let out: TabBarOut
 
     init(
         viewIn: TabBarViewIn?,
-        inOut: @escaping TabBarInOut
+        out: @escaping TabBarOut
     ) {
         self.viewIn = viewIn
-        self.inOut = inOut
+        self.out = out
     }
 
     func viewCreated() {
-        self.out = self.inOut(self)
+        self.out(.register(ModuleIn(ref: self) { [weak self] cmd in self?.invoke(cmd) }))
     }
 
-    func handle(_ command: TabBarCommand) {
-        switch command {
-        case let .showTab(tab):
-            self.viewIn?.showTab(tab)
-        }
-    }
-}
-
-extension TabBarPresenter: FeedTabOut {
-}
-
-extension TabBarPresenter: ProfileTabOut {
+    private func invoke(_ cmd: TabBarInCmd) { switch cmd {
+    case let .showTab(tab):
+        self.viewIn?.showTab(tab)
+    }}
 }

@@ -2,13 +2,16 @@ import UIKit
 
 // Mark: - Module
 
-protocol LoginIn: class {
+enum LoginInCmd {
 }
 
-protocol LoginOut: class {
+enum LoginOutCmd {
+    case register(LoginIn)
+    case unregister(LoginIn)
 }
 
-typealias LoginInOut = (LoginIn) -> LoginOut?
+typealias LoginIn = (LoginInCmd) -> Void
+typealias LoginOut = (LoginOutCmd) -> Void
 
 // Mark: - View
 

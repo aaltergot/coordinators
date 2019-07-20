@@ -2,13 +2,15 @@ import UIKit
 
 // Mark: - Module
 
-protocol FeedIn: class {
+enum FeedInCmd {
 }
 
-protocol FeedOut: class {
+enum FeedOutCmd {
+    case loaded(FeedIn)
 }
 
-typealias FeedInOut = (FeedIn) -> FeedOut?
+typealias FeedIn = (FeedInCmd) -> Void
+typealias FeedOut = (FeedOutCmd) -> Void
 
 // Mark: - View
 

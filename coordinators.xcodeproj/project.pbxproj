@@ -12,6 +12,7 @@
 		17856219E00C68CF0D90374B /* ProfileTabProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178568B04999935EC176F080 /* ProfileTabProtocols.swift */; };
 		178562FEF6B40D04258A9D04 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17856B220FCF4571F4454F18 /* LoginView.xib */; };
 		178563B63A58EB4E24DB9335 /* FeedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785644C455B4F73929164B7 /* FeedProtocols.swift */; };
+		17856425712BB1C0CFA31ACF /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178560D59B3EC4C51877A89D /* Module.swift */; };
 		1785642D5390048BB3CFF2CD /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856729D58E8CC1725DB887 /* LoginPresenter.swift */; };
 		1785647FD97749F0F964B317 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785633EDB95672657AD0050 /* LoginView.swift */; };
 		17856526F91BD27092CB2974 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856E2E06AB9FFE96F6A2CA /* LoginProtocols.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		178560D59B3EC4C51877A89D /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		178561E822E6F11F1AAC0556 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		1785622BDD97E8558CC9C156 /* RootPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
 		1785623D20C83E365041BCCC /* RootInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				41AA815422817B6000AFB22E /* AppDelegate.swift */,
+				178560D59B3EC4C51877A89D /* Module.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				1785688F93DA520DDBAE4B23 /* TabBarPresenter.swift in Sources */,
 				178568302AD1D0D124A2EB3F /* TabBarView.swift in Sources */,
 				178565C43149DF28B887CAF7 /* TabBarProtocols.swift in Sources */,
+				17856425712BB1C0CFA31ACF /* Module.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

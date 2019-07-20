@@ -15,14 +15,14 @@ fileprivate class RootRouterStub: RootRouter {
     var showLoginCalled = false
 
     func openTabBar(
-        feedTabInOut: @escaping FeedTabInOut,
-        profileTabInOut: @escaping ProfileTabInOut,
-        tabBarInOut: @escaping TabBarInOut
+        feedTabOut: @escaping FeedTabOut,
+        profileTabOut: @escaping ProfileTabOut,
+        tabBarOut: @escaping TabBarOut
     ) {
         self.showTabBarCalled = true
     }
 
-    func openLogin(_ inOut: @escaping LoginInOut) {
+    func openLogin(_ out: @escaping LoginOut) {
         self.showLoginCalled = true
     }
 }
@@ -61,7 +61,7 @@ class RootPresenterTests: XCTestCase {
             viewIn: nil,
             interactor: RootInteractorImpl(loginService: self.loginServiceStub),
             router: self.rootRouterStub,
-            inOut: { _ in nil}
+            out: { _ in }
         )
     }
 

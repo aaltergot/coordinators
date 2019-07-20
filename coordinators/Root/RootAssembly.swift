@@ -17,12 +17,12 @@ class RootAssembly {
         self.loginAssembly = loginAssembly
     }
 
-    func createModule(_ inOut: @escaping RootInOut) -> RootViewType {
+    func createModule(_ out: @escaping RootOut) -> RootViewType {
         let view = RootView()
         let interactor = RootInteractorImpl(loginService: self.loginService)
         let router = RootRouterImpl(navigationController: view, assembly: self)
         let presenter =
-            RootPresenter(viewIn: view, interactor: interactor, router: router, inOut: inOut)
+            RootPresenter(viewIn: view, interactor: interactor, router: router, out: out)
         view.viewOut = presenter
         return view
     }

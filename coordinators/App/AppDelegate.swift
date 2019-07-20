@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, RootOut {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     private var rootAssembly: RootAssembly?
@@ -22,9 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RootOut {
         let window = UIWindow(frame: UIScreen.main.bounds)
         let rootAssembly = self.makeRootAssembly()
 
-        window.rootViewController = rootAssembly.createModule { [weak self] rootIn in
-            self?.rootIn = rootIn
-            return self
+        window.rootViewController = rootAssembly.createModule { [weak self] rootCmd in
+            guard let self = self else { return }
+
+            switch rootCmd {
+            case let .register(rootIn): self.rootIn = rootIn
+            }
         }
         window.makeKeyAndVisible()
 
@@ -69,9 +72,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RootOut {
     private var evenActivation = false
     func applicationDidBecomeActive(_ application: UIApplication) {
         if (self.evenActivation) {
-            self.rootIn?.handle(.processDeepLink("profile/settings"))
+            self.rootIn?.invoke(.processDeepLink("profile/settings"))
         } else {
-            self.rootIn?.handle(.processDeepLink("feed"))
+            self.rootIn?.invoke(.processDeepLink("feed"))
         }
         self.evenActivation = !self.evenActivation
     }

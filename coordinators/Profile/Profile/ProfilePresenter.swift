@@ -1,26 +1,26 @@
-class ProfilePresenter: ProfileIn, ProfileViewOut {
+class ProfilePresenter: ProfileViewOut {
 
     private weak var viewIn: ProfileViewIn?
 
-    private let inOut: ProfileInOut
-    private weak var out: ProfileOut?
+    private let out: ProfileOut
 
     init(
         viewIn: ProfileViewIn?,
-        inOut: @escaping ProfileInOut
+        out: @escaping ProfileOut
     ) {
         self.viewIn = viewIn
-        self.inOut = inOut
+        self.out = out
     }
 
     func viewDidLoad() {
-        self.out = self.inOut(self)
+        self.out(.register(ModuleIn(ref: self) { [weak self] cmd in self?.invoke(cmd) }))
     }
 
     func settingsButtonPressed() {
-        self.out?.profileOpenSettings()
+        self.out(.openSettings)
+        self.out(.getData { print($0) })
     }
-}
 
-extension ProfilePresenter: SettingsOut {
+    private func invoke(_ cmd: ProfileInCmd) {}
+
 }
