@@ -4,26 +4,25 @@ class RootAssembly {
 
     private let loginService: LoginService
 
-    let tabBarAssembly: TabBarAssembly
     let loginAssembly: LoginAssembly
-
+    let feedTabAssembly: FeedTabAssembly
+    let profileTabAssembly: ProfileTabAssembly
+    
     init(
         loginService: LoginService,
-        tabBarAssembly: TabBarAssembly,
-        loginAssembly: LoginAssembly
+        loginAssembly: LoginAssembly,
+        feedTabAssembly: FeedTabAssembly,
+        profileTabAssembly: ProfileTabAssembly
     ) {
         self.loginService = loginService
-        self.tabBarAssembly = tabBarAssembly
+        self.feedTabAssembly = feedTabAssembly
+        self.profileTabAssembly = profileTabAssembly
         self.loginAssembly = loginAssembly
     }
 
-    func createModule(_ inOut: @escaping RootInOut) -> RootViewType {
-        let view = RootView()
-        let interactor = RootInteractorImpl(loginService: self.loginService)
-        let router = RootRouterImpl(navigationController: view, assembly: self)
-        let presenter =
-            RootPresenter(viewIn: view, interactor: interactor, router: router, inOut: inOut)
-        view.viewOut = presenter
-        return view
+    func createCoordinator() -> RootCoordinator {
+        return RootCoordinator(
+            assembly: self,
+            loginService: self.loginService)
     }
 }

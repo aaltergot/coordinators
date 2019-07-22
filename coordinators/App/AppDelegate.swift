@@ -9,10 +9,11 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, RootOut {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     private var rootAssembly: RootAssembly?
+    private var rootCoordinator: RootCoordinator?
 
     func application(
         _ application: UIApplication,
@@ -20,11 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RootOut {
     ) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         let rootAssembly = self.makeRootAssembly()
-
-        window.rootViewController = rootAssembly.createModule { [weak self] _ in return self }
+        let rootCoordinator = rootAssembly.createCoordinator()
+        rootCoordinator.run(window)
         window.makeKeyAndVisible()
-
+        
         self.window = window
+        self.rootCoordinator = rootCoordinator
         self.rootAssembly = rootAssembly
 
         return true
@@ -35,19 +37,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RootOut {
 
         return RootAssembly(
             loginService: loginService,
-            tabBarAssembly: TabBarAssembly(
-                feedTabAssembly: FeedTabAssembly(
-                    feedAssembly: FeedAssembly()
-                ),
-                profileTabAssembly: ProfileTabAssembly(
-                    profileAssembly: ProfileAssembly(
-                        settingsAssembly: SettingsAssembly(
-                            loginService: loginService
-                        )
+            loginAssembly: LoginAssembly(loginService: loginService),
+            feedTabAssembly: FeedTabAssembly(
+                feedAssembly: FeedAssembly()
+            ),
+            profileTabAssembly: ProfileTabAssembly(
+                profileAssembly: ProfileAssembly(
+                    settingsAssembly: SettingsAssembly(
+                        loginService: loginService
                     )
                 )
-            ),
-            loginAssembly: LoginAssembly(loginService: loginService)
+            )
         )
     }
 
