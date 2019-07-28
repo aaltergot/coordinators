@@ -42,7 +42,6 @@
 		41AA815522817B6000AFB22E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA815422817B6000AFB22E /* AppDelegate.swift */; };
 		41AA815C22817B6100AFB22E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41AA815B22817B6100AFB22E /* Assets.xcassets */; };
 		41AC13162283131700D0A888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AA815D22817B6100AFB22E /* LaunchScreen.storyboard */; };
-		41E56532228363D5007ECBCC /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E56531228363D5007ECBCC /* FeedPresenter.swift */; };
 		41E565362283645D007ECBCC /* FeedAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E565352283645D007ECBCC /* FeedAssembly.swift */; };
 		41E56539228818B3007ECBCC /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E56538228818B3007ECBCC /* ProfilePresenter.swift */; };
 		41E5653D228818CC007ECBCC /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5653C228818CC007ECBCC /* ProfileAssembly.swift */; };
@@ -108,7 +107,6 @@
 		41AA816022817B6100AFB22E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41AA816522817B6100AFB22E /* coordinatorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coordinatorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AA816B22817B6100AFB22E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41E56531228363D5007ECBCC /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		41E565352283645D007ECBCC /* FeedAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAssembly.swift; sourceTree = "<group>"; };
 		41E56538228818B3007ECBCC /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		41E5653C228818CC007ECBCC /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
@@ -296,7 +294,6 @@
 			isa = PBXGroup;
 			children = (
 				41E565352283645D007ECBCC /* FeedAssembly.swift */,
-				41E56531228363D5007ECBCC /* FeedPresenter.swift */,
 				41E5655722885BDB007ECBCC /* FeedView.swift */,
 				41E5655822885BDB007ECBCC /* FeedView.xib */,
 				1785644C455B4F73929164B7 /* FeedProtocols.swift */,
@@ -435,7 +432,6 @@
 			files = (
 				41E5655922885BDB007ECBCC /* FeedView.swift in Sources */,
 				41E5656522893B41007ECBCC /* SettingsAssembly.swift in Sources */,
-				41E56532228363D5007ECBCC /* FeedPresenter.swift in Sources */,
 				41E5656722893B4D007ECBCC /* SettingsPresenter.swift in Sources */,
 				41E5653D228818CC007ECBCC /* ProfileAssembly.swift in Sources */,
 				41E5655522885B5A007ECBCC /* ProfileView.swift in Sources */,

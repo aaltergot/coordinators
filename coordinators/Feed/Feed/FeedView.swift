@@ -1,11 +1,11 @@
-class FeedView: FeedViewType, FeedViewIn {
+class FeedView: FeedViewType {
 
-    var viewOut: FeedViewOut?
+    var out: FeedOut!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        viewOut?.viewDidLoad()
+        self.out(.register { _ in })
     }
 
     private func setupView() {

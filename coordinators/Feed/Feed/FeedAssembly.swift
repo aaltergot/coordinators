@@ -5,8 +5,7 @@ class FeedAssembly {
             nibName: String(describing: FeedView.self),
             bundle: nil
         )
-        let presenter = FeedPresenter(viewIn: view, out: out)
-        view.viewOut = presenter
+        view.out = out
         return view
     }
 }
