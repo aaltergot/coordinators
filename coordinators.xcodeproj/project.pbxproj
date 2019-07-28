@@ -11,7 +11,7 @@
 		178560831DB92E6FE0F1E2F0 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856D427EF64FEB85BA8795 /* LoginInteractor.swift */; };
 		17856219E00C68CF0D90374B /* ProfileTabProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178568B04999935EC176F080 /* ProfileTabProtocols.swift */; };
 		178562FEF6B40D04258A9D04 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17856B220FCF4571F4454F18 /* LoginView.xib */; };
-		178563B63A58EB4E24DB9335 /* FeedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785644C455B4F73929164B7 /* FeedProtocols.swift */; };
+		178563B63A58EB4E24DB9335 /* FeedModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785644C455B4F73929164B7 /* FeedModule.swift */; };
 		17856425712BB1C0CFA31ACF /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178560D59B3EC4C51877A89D /* Module.swift */; };
 		1785642D5390048BB3CFF2CD /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856729D58E8CC1725DB887 /* LoginPresenter.swift */; };
 		1785647FD97749F0F964B317 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785633EDB95672657AD0050 /* LoginView.swift */; };
@@ -75,7 +75,7 @@
 		178562E881A3AB7453D8E9D8 /* SettingsProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsProtocols.swift; sourceTree = "<group>"; };
 		1785633EDB95672657AD0050 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		178563555CB37798F09630B3 /* FeedTabPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTabPresenter.swift; sourceTree = "<group>"; };
-		1785644C455B4F73929164B7 /* FeedProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedProtocols.swift; sourceTree = "<group>"; };
+		1785644C455B4F73929164B7 /* FeedModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedModule.swift; sourceTree = "<group>"; };
 		17856484BBAF76FC99AC46C2 /* TabBarProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarProtocols.swift; sourceTree = "<group>"; };
 		1785655C92B1FCBEF8324036 /* FeedTabAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTabAssembly.swift; sourceTree = "<group>"; };
 		17856626A9667A479B3C026F /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -296,7 +296,7 @@
 				41E565352283645D007ECBCC /* FeedAssembly.swift */,
 				41E5655722885BDB007ECBCC /* FeedView.swift */,
 				41E5655822885BDB007ECBCC /* FeedView.xib */,
-				1785644C455B4F73929164B7 /* FeedProtocols.swift */,
+				1785644C455B4F73929164B7 /* FeedModule.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -439,7 +439,7 @@
 				41AA815522817B6000AFB22E /* AppDelegate.swift in Sources */,
 				41E56539228818B3007ECBCC /* ProfilePresenter.swift in Sources */,
 				41E5656A22893B5E007ECBCC /* SettingsView.swift in Sources */,
-				178563B63A58EB4E24DB9335 /* FeedProtocols.swift in Sources */,
+				178563B63A58EB4E24DB9335 /* FeedModule.swift in Sources */,
 				1785661EA049CC25CAA5D495 /* ProfileProtocols.swift in Sources */,
 				178567F2481C27CEB640DDB7 /* SettingsProtocols.swift in Sources */,
 				17856A8AB19D8F8CA2FB2DFB /* SettingsInteractor.swift in Sources */,
