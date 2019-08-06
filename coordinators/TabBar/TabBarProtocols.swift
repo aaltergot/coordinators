@@ -7,18 +7,16 @@ enum TabBarTab: Hashable {
     case profile
 }
 
-enum TabBarCommand {
+enum TabBarInCmd {
     case showTab(TabBarTab)
 }
 
-protocol TabBarIn: class {
-    func handle(_ command: TabBarCommand)
+enum TabBarOutCmd {
+    case register(TabBarIn)
 }
 
-protocol TabBarOut: class {
-}
-
-typealias TabBarInOut = (TabBarIn) -> TabBarOut?
+typealias TabBarIn = ModuleIn<TabBarInCmd>
+typealias TabBarOut = (TabBarOutCmd) -> Void
 
 // Mark: - View
 

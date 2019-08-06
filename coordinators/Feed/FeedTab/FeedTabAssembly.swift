@@ -8,11 +8,11 @@ class FeedTabAssembly {
         self.feedAssembly = feedAssembly
     }
 
-    func createModule(_ inOut: @escaping FeedTabInOut) -> FeedTabViewType {
+    func createModule(_ out: @escaping FeedTabOut) -> FeedTabViewType {
         let view = FeedTabView { [weak self] view in
             guard let self = self else { return nil }
             let router = FeedTabRouterImpl(navigationController: view, assembly: self)
-            return FeedTabPresenter(viewIn: view, router: router, inOut: inOut)
+            return FeedTabPresenter(viewIn: view, router: router, out: out)
         }
         return view
     }

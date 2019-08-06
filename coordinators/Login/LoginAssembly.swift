@@ -6,13 +6,13 @@ class LoginAssembly {
         self.loginService = loginService
     }
 
-    func createModule(_ inOut: @escaping LoginInOut) -> LoginViewType {
+    func createModule(_ out: @escaping LoginOut) -> LoginViewType {
         let view = LoginView(
             nibName: String(describing: LoginView.self),
             bundle: nil
         )
         let interactor = LoginInteractorImpl(loginService: self.loginService)
-        let presenter = LoginPresenter(viewIn: view, interactor: interactor, inOut: inOut)
+        let presenter = LoginPresenter(viewIn: view, interactor: interactor, out: out)
         view.viewOut = presenter
         return view
     }
