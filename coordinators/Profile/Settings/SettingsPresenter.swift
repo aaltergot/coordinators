@@ -1,28 +1,31 @@
-class SettingsPresenter: SettingsViewOut {
+enum SettingsOutCmd {
+}
 
-    private weak var viewIn: SettingsViewIn?
-    private let interactor: SettingsInteractor
+typealias SettingsOut = (SettingsOutCmd) -> Void
 
+protocol SettingsIn: class {
+}
+
+class SettingsPresenter: SettingsIn, SettingsViewOut {
+
+    private weak var view: SettingsView?
+    private let loginService: LoginService
     private let out: SettingsOut
 
     init(
-        viewIn: SettingsViewIn?,
-        interactor: SettingsInteractor,
+        view: SettingsView?,
+        loginService: LoginService,
         out: @escaping SettingsOut
     ) {
-        self.viewIn = viewIn
-        self.interactor = interactor
+        self.view = view
+        self.loginService = loginService
         self.out = out
     }
 
     func viewDidLoad() {
-        self.out(.register(SettingsIn(ref: self) { [weak self] cmd in self?.invoke(cmd) }))
     }
 
-    func logoutButtonPressed() {
-        self.interactor.logout()
-    }
-
-    private func invoke(_ cmd: SettingsInCmd) {
+    func didPressLogout() {
+        self.loginService.logout()
     }
 }

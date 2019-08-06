@@ -1,26 +1,33 @@
-class ProfilePresenter: ProfileViewOut {
+enum ProfileOutCmd {
+}
 
-    private weak var viewIn: ProfileViewIn?
+typealias ProfileOut = (ProfileOutCmd) -> Void
 
+protocol ProfileIn: class {
+    func openSettings()
+}
+
+class ProfilePresenter: ProfileIn, ProfileViewOut {
+
+    private weak var view: ProfileView?
     private let out: ProfileOut
 
+    private weak var settingsIn: SettingsIn?
+
     init(
-        viewIn: ProfileViewIn?,
+        view: ProfileView?,
         out: @escaping ProfileOut
     ) {
-        self.viewIn = viewIn
+        self.view = view
         self.out = out
     }
 
     func viewDidLoad() {
-        self.out(.register(ModuleIn(ref: self) { [weak self] cmd in self?.invoke(cmd) }))
     }
 
-    func settingsButtonPressed() {
-        self.out(.openSettings)
-        self.out(.getData { print($0) })
+    func openSettings() {
+        if self.settingsIn == nil {
+            self.settingsIn = self.view?.openSettings { _ in }
+        }
     }
-
-    private func invoke(_ cmd: ProfileInCmd) {}
-
 }

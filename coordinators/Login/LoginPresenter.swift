@@ -1,26 +1,32 @@
-class LoginPresenter: LoginViewOut {
+protocol LoginIn: class {
+}
 
-    private weak var viewIn: LoginViewIn?
-    private let interactor: LoginInteractor
+enum LoginOutCmd {
+}
 
+typealias LoginOut = (LoginOutCmd) -> Void
+
+class LoginPresenter: LoginIn, LoginViewOut {
+
+    private weak var view: LoginView?
+    private let loginService: LoginService
     private let out: LoginOut
 
     init(
-        viewIn: LoginViewIn?,
-        interactor: LoginInteractor,
+        view: LoginView?,
+        loginService: LoginService,
         out: @escaping LoginOut
     ) {
-        self.viewIn = viewIn
-        self.interactor = interactor
+        self.view = view
+        self.loginService = loginService
         self.out = out
     }
 
     func viewDidLoad() {
-        self.out(.register(ModuleIn(ref: self) { _ in }))
     }
 
-    func loginButtonPressed() {
-        self.interactor.login()
+    func didPressLogin() {
+        self.loginService.login()
     }
 }
 

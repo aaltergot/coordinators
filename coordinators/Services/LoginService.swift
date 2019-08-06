@@ -28,6 +28,7 @@ class LoginServiceImpl: LoginService {
 
     var authorized: Bool = false
     var delegates: Array<LoginDelegate> = Array()
+    static var shared = LoginServiceImpl()
     
     func isLoggedIn() -> Bool {
         return authorized

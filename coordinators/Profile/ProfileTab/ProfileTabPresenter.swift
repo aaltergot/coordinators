@@ -1,63 +1,42 @@
-class ProfileTabPresenter: ProfileTabViewOut {
+protocol ProfileTabIn: class {
+    func processDeepLink(_ deepLink: String)
+}
 
-    private weak var viewIn: ProfileTabViewIn?
-    private let router: ProfileTabRouter
+enum ProfileTabOutCmd {
+}
 
+typealias ProfileTabOut = (ProfileTabOutCmd) -> Void
+
+class ProfileTabPresenter: ProfileTabIn, ProfileTabViewOut {
+
+    private weak var view: ProfileTabView?
     private let out: ProfileTabOut
 
-    private var settingsIn: SettingsIn?
+    private weak var profileIn: ProfileIn?
 
     init(
-        viewIn: ProfileTabViewIn?,
-        router: ProfileTabRouter,
+        view: ProfileTabView?,
         out: @escaping ProfileTabOut
     ) {
-        self.viewIn = viewIn
-        self.router = router
+        self.view = view
         self.out = out
     }
 
-    func viewCreated() {
+    func viewDidLoad() {
         self.openProfile()
-        self.out(.register(ModuleIn(ref: self) { [weak self] cmd in self?.invoke(cmd) }))
     }
 
-    private func invoke(_ cmd: ProfileTabInCmd) { switch cmd {
-    case let .processDeepLink(deepLink):
+    func processDeepLink(_ deepLink: String) {
         let split = deepLink.split(separator: "/")
         if split.first == "settings" {
-            if !(self.settingsIn?.isAlive() ?? false) {
-                self.openSettings()
-            }
-        }
-    }}
-
-    private func openProfile() {
-        self.router.openProfile { [weak self] profileCmd in
-            guard let self = self else { return }
-
-            switch profileCmd {
-            case .register(_):
-                break
-
-            case .openSettings:
-                self.openSettings()
-
-            case let .getData(callback):
-                callback("hello")
-            }
+            self.openProfile()
+            self.profileIn?.openSettings()
         }
     }
 
-    private func openSettings() {
-        self.router.openSettings { [weak self] settingsCmd in
-            guard let self = self else { return }
-
-            switch settingsCmd {
-            case let .register(settingsIn):
-                self.settingsIn = settingsIn
-            }
+    private func openProfile() {
+        if self.profileIn == nil {
+            self.profileIn = self.view?.openProfile { _ in }
         }
     }
 }
-
