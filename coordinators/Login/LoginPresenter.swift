@@ -16,7 +16,7 @@ class LoginPresenter: LoginViewOut {
     }
 
     func viewDidLoad() {
-        self.out(.register { _ in })
+        self.out(.register(ModuleIn(ref: self) { _ in }))
     }
 
     func loginButtonPressed() {

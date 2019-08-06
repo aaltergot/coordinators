@@ -7,10 +7,9 @@ enum LoginInCmd {
 
 enum LoginOutCmd {
     case register(LoginIn)
-    case unregister(LoginIn)
 }
 
-typealias LoginIn = (LoginInCmd) -> Void
+typealias LoginIn = ModuleIn<LoginInCmd>
 typealias LoginOut = (LoginOutCmd) -> Void
 
 // Mark: - View

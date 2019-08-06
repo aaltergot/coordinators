@@ -9,7 +9,7 @@ enum FeedOutCmd {
     case register(FeedIn)
 }
 
-typealias FeedIn = (FeedInCmd) -> Void
+typealias FeedIn = ModuleIn<FeedInCmd>
 typealias FeedOut = (FeedOutCmd) -> Void
 
 // Mark: - View

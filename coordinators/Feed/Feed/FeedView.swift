@@ -5,7 +5,7 @@ class FeedView: FeedViewType {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        self.out(.register { _ in })
+        self.out(.register(ModuleIn(ref: self) { _ in }))
     }
 
     private func setupView() {

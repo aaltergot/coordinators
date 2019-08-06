@@ -1,8 +1,7 @@
 class RootPresenter: RootViewOut {
 
     private weak var viewIn: RootViewIn?
-    private let interactor: RootInteractor
-    private let router: RootRouter
+    private let loginService: LoginService
 
     private let out: RootOut
 
@@ -14,19 +13,17 @@ class RootPresenter: RootViewOut {
 
     init(
         viewIn: RootViewIn?,
-        interactor: RootInteractor,
-        router: RootRouter,
+        loginService: LoginService,
         out: @escaping RootOut
     ) {
         self.viewIn = viewIn
-        self.interactor = interactor
-        self.router = router
+        self.loginService = loginService
         self.out = out
     }
 
     func viewDidLoad() {
-        self.interactor.addLoginDelegate(self)
-        if (self.interactor.isUserLoggedIn()) {
+        self.loginService.addDelegate(delegate: self)
+        if (self.loginService.isLoggedIn()) {
             self.openTabBar()
         } else {
             self.openLogin()
@@ -65,7 +62,7 @@ class RootPresenter: RootViewOut {
     }
 
     private func openTabBar() {
-        self.router.openTabBar(
+        self.viewIn?.openTabBar(
             feedTabOut: { [weak self] feedTabCmd in
                 guard let self = self else { return }
 
@@ -97,7 +94,7 @@ class RootPresenter: RootViewOut {
     }
 
     private func openLogin() {
-        self.router.openLogin { _ in }
+        self.viewIn?.openLogin { _ in }
     }
 }
 
