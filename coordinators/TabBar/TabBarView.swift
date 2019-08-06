@@ -1,30 +1,39 @@
 import Foundation
 import UIKit
 
+
 class TabBarView: TabBarViewType, TabBarViewIn {
     
     private let viewInOut: (TabBarView) -> TabBarViewOut?
     private lazy var viewOut = viewInOut(self)
 
+    private let tabIndices: [TabBarTab : Int]
+
     init(
-        viewControllers: Array<UIViewController>,
+        tabs: [(TabBarTab, UIViewController)],
         _ viewInOut: @escaping (TabBarView) -> TabBarViewOut?
     ) {
         self.viewInOut = viewInOut
 
+        var tabIndices = [TabBarTab : Int]()
+        for (index, (tab, _)) in tabs.enumerated() {
+            tabIndices[tab] = index
+        }
+        self.tabIndices = tabIndices
+
         super.init(nibName: nil, bundle: nil)
 
-        for viewController in viewControllers {
-            self.addChild(viewController)
-        }
+        tabs.forEach { _, vc in self.addChild(vc) }
+
+        self.viewOut?.viewCreated()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        viewOut?.viewDidLoad()
+    func showTab(_ tab: TabBarTab) {
+        guard let index = self.tabIndices[tab] else { return }
+        self.selectedIndex = index
     }
 }

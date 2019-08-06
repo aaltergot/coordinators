@@ -14,8 +14,13 @@ class ProfileTabRouterImpl: ProfileTabRouter {
         self.assembly = assembly
     }
 
-    func openProfile(_ inOut: @escaping ProfileInOut) {
+    func openProfile(_ out: @escaping ProfileOut) {
         guard let nc = self.navigationController else { return }
-        nc.setViewControllers([self.assembly.profileAssembly.createModule(nc, inOut)], animated: false)
+        nc.setViewControllers([self.assembly.profileAssembly.createModule(out)], animated: false)
+    }
+
+    func openSettings(_ out: @escaping SettingsOut) {
+        guard let nc = self.navigationController else { return }
+        nc.pushViewController(self.assembly.settingsAssembly.createModule(out), animated: true)
     }
 }

@@ -2,21 +2,30 @@ import UIKit
 
 // Mark: - Module
 
-protocol TabBarIn: class {
+enum TabBarTab: Hashable {
+    case feed
+    case profile
 }
 
-protocol TabBarOut: class {
+enum TabBarInCmd {
+    case showTab(TabBarTab)
 }
 
-typealias TabBarInOut = (TabBarIn) -> TabBarOut?
+enum TabBarOutCmd {
+    case register(TabBarIn)
+}
+
+typealias TabBarIn = ModuleIn<TabBarInCmd>
+typealias TabBarOut = (TabBarOutCmd) -> Void
 
 // Mark: - View
 
 protocol TabBarViewIn: class {
+    func showTab(_ tab: TabBarTab)
 }
 
 protocol TabBarViewOut: class {
-    func viewDidLoad()
+    func viewCreated()
 }
 
 typealias TabBarViewType = UITabBarController

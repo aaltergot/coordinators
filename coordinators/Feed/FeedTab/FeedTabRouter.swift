@@ -14,8 +14,8 @@ class FeedTabRouterImpl: FeedTabRouter {
         self.assembly = assembly
     }
 
-    func openFeed(_ inOut: @escaping FeedInOut) {
+    func openFeed(_ out: @escaping FeedOut) {
         guard let nc = self.navigationController else { return }
-        nc.setViewControllers([self.assembly.feedAssembly.createModule(inOut)], animated: false)
+        nc.setViewControllers([self.assembly.feedAssembly.createModule(out)], animated: false)
     }
 }

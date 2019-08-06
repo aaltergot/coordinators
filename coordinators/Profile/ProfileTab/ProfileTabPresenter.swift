@@ -1,27 +1,63 @@
-class ProfileTabPresenter: ProfileTabIn, ProfileTabViewOut {
+class ProfileTabPresenter: ProfileTabViewOut {
 
     private weak var viewIn: ProfileTabViewIn?
     private let router: ProfileTabRouter
 
-    private let inOut: ProfileTabInOut
-    private weak var out: ProfileTabOut?
+    private let out: ProfileTabOut
+
+    private var settingsIn: SettingsIn?
 
     init(
         viewIn: ProfileTabViewIn?,
         router: ProfileTabRouter,
-        inOut: @escaping ProfileTabInOut
+        out: @escaping ProfileTabOut
     ) {
         self.viewIn = viewIn
         self.router = router
-        self.inOut = inOut
+        self.out = out
     }
 
     func viewCreated() {
-        self.out = self.inOut(self)
-        self.router.openProfile { [weak self] _ in return self }
+        self.openProfile()
+        self.out(.register(ModuleIn(ref: self) { [weak self] cmd in self?.invoke(cmd) }))
     }
-}
 
-extension ProfileTabPresenter: ProfileOut {
+    private func invoke(_ cmd: ProfileTabInCmd) { switch cmd {
+    case let .processDeepLink(deepLink):
+        let split = deepLink.split(separator: "/")
+        if split.first == "settings" {
+            if !(self.settingsIn?.isAlive() ?? false) {
+                self.openSettings()
+            }
+        }
+    }}
+
+    private func openProfile() {
+        self.router.openProfile { [weak self] profileCmd in
+            guard let self = self else { return }
+
+            switch profileCmd {
+            case .register(_):
+                break
+
+            case .openSettings:
+                self.openSettings()
+
+            case let .getData(callback):
+                callback("hello")
+            }
+        }
+    }
+
+    private func openSettings() {
+        self.router.openSettings { [weak self] settingsCmd in
+            guard let self = self else { return }
+
+            switch settingsCmd {
+            case let .register(settingsIn):
+                self.settingsIn = settingsIn
+            }
+        }
+    }
 }
 
