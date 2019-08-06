@@ -2,13 +2,16 @@ import UIKit
 
 // Mark: - Module
 
-protocol ProfileTabIn: class {
+enum ProfileTabInCmd {
+    case processDeepLink(String)
 }
 
-protocol ProfileTabOut: class {
+enum ProfileTabOutCmd {
+    case register(ProfileTabIn)
 }
 
-typealias ProfileTabInOut = (ProfileTabIn) -> ProfileTabOut?
+typealias ProfileTabIn = ModuleIn<ProfileTabInCmd>
+typealias ProfileTabOut = (ProfileTabOutCmd) -> Void
 
 // Mark: - View
 
@@ -24,6 +27,6 @@ typealias ProfileTabViewType = UINavigationController
 // Mark: - Router
 
 protocol ProfileTabRouter: class {
-    func openProfile(_ inOut: @escaping ProfileInOut)
-    func openSettings(_ inOut: @escaping SettingsInOut)
+    func openProfile(_ out: @escaping ProfileOut)
+    func openSettings(_ out: @escaping SettingsOut)
 }

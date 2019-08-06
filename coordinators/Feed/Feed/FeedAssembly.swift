@@ -1,12 +1,11 @@
 class FeedAssembly {
     
-    func createModule(_ inOut: @escaping FeedInOut) -> FeedViewType {
+    func createModule(_ out: @escaping FeedOut) -> FeedViewType {
         let view = FeedView(
             nibName: String(describing: FeedView.self),
             bundle: nil
         )
-        let presenter = FeedPresenter(viewIn: view, inOut: inOut)
-        view.viewOut = presenter
+        view.out = out
         return view
     }
 }

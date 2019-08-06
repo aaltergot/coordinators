@@ -2,13 +2,15 @@ import UIKit
 
 // Mark: - Module
 
-protocol FeedTabIn: class {
+enum FeedTabInCmd {
 }
 
-protocol FeedTabOut: class {
+enum FeedTabOutCmd {
+    case register(FeedTabIn)
 }
 
-typealias FeedTabInOut = (FeedTabIn) -> FeedTabOut?
+typealias FeedTabIn = ModuleIn<FeedTabInCmd>
+typealias FeedTabOut = (FeedTabOutCmd) -> Void
 
 // Mark: - View
 
@@ -24,5 +26,5 @@ typealias FeedTabViewType = UINavigationController
 // Mark: - Router
 
 protocol FeedTabRouter: class {
-    func openFeed(_ inOut: @escaping FeedInOut)
+    func openFeed(_ out: @escaping FeedOut)
 }

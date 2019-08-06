@@ -11,7 +11,8 @@
 		178560831DB92E6FE0F1E2F0 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856D427EF64FEB85BA8795 /* LoginInteractor.swift */; };
 		17856219E00C68CF0D90374B /* ProfileTabProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178568B04999935EC176F080 /* ProfileTabProtocols.swift */; };
 		178562FEF6B40D04258A9D04 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17856B220FCF4571F4454F18 /* LoginView.xib */; };
-		178563B63A58EB4E24DB9335 /* FeedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785644C455B4F73929164B7 /* FeedProtocols.swift */; };
+		178563B63A58EB4E24DB9335 /* FeedModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785644C455B4F73929164B7 /* FeedModule.swift */; };
+		17856425712BB1C0CFA31ACF /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178560D59B3EC4C51877A89D /* Module.swift */; };
 		1785642D5390048BB3CFF2CD /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856729D58E8CC1725DB887 /* LoginPresenter.swift */; };
 		1785647FD97749F0F964B317 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785633EDB95672657AD0050 /* LoginView.swift */; };
 		17856526F91BD27092CB2974 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856E2E06AB9FFE96F6A2CA /* LoginProtocols.swift */; };
@@ -19,20 +20,17 @@
 		178565C43149DF28B887CAF7 /* TabBarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856484BBAF76FC99AC46C2 /* TabBarProtocols.swift */; };
 		178565E960A2B6A1112267E9 /* FeedTabAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785655C92B1FCBEF8324036 /* FeedTabAssembly.swift */; };
 		1785661EA049CC25CAA5D495 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856B3E3AA76C963B8A20B1 /* ProfileProtocols.swift */; };
-		1785666821D16AC41CAEB528 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785623D20C83E365041BCCC /* RootInteractor.swift */; };
-		178566708840EDD14E7AE6A0 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785692AB373709E2B73C255 /* RootRouter.swift */; };
 		178566A045F4AB4EEE0496FC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178561E822E6F11F1AAC0556 /* RootView.swift */; };
 		178567D34D1CA08BC590929A /* ProfileTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178569585E8C5BF114D797B1 /* ProfileTabPresenter.swift */; };
 		178567F2481C27CEB640DDB7 /* SettingsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178562E881A3AB7453D8E9D8 /* SettingsProtocols.swift */; };
 		178567FCC658253F61E36D81 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178567A6DB6F0856AF539A2D /* LoginAssembly.swift */; };
 		178568302AD1D0D124A2EB3F /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856992B83BA90820B6C281 /* TabBarView.swift */; };
 		1785688F93DA520DDBAE4B23 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856748C7A0694C045E4B62 /* TabBarPresenter.swift */; };
-		178568BB7A82B3A88DAF3FF6 /* RootProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856FFB5AB26D33860C992B /* RootProtocols.swift */; };
+		178568BB7A82B3A88DAF3FF6 /* RootModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856FFB5AB26D33860C992B /* RootModule.swift */; };
 		17856902D88B1AD7D686970A /* ProfileTabAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856C9A4EED5AF47DBC87A9 /* ProfileTabAssembly.swift */; };
 		17856A5F573608AD90C219E6 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856626A9667A479B3C026F /* LoginService.swift */; };
 		17856A8AB19D8F8CA2FB2DFB /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856B6C0A667EE3B1EEC3CD /* SettingsInteractor.swift */; };
 		17856AC607DE84A1AED232BD /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785622BDD97E8558CC9C156 /* RootPresenter.swift */; };
-		17856BAF4BE027DCC5D35502 /* RootAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856CDD09BB5680203DC592 /* RootAssembly.swift */; };
 		17856C2C719DEB8E35CA1784 /* FeedTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856A590F21D3B59234D9EE /* FeedTabView.swift */; };
 		17856D3A52EA786AC62D303E /* ProfileTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178566716F1BE7AC576F0F2D /* ProfileTabView.swift */; };
 		17856E3E0E5654F7E9EC89AC /* FeedTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178563555CB37798F09630B3 /* FeedTabPresenter.swift */; };
@@ -41,7 +39,6 @@
 		41AA815522817B6000AFB22E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA815422817B6000AFB22E /* AppDelegate.swift */; };
 		41AA815C22817B6100AFB22E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41AA815B22817B6100AFB22E /* Assets.xcassets */; };
 		41AC13162283131700D0A888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AA815D22817B6100AFB22E /* LaunchScreen.storyboard */; };
-		41E56532228363D5007ECBCC /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E56531228363D5007ECBCC /* FeedPresenter.swift */; };
 		41E565362283645D007ECBCC /* FeedAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E565352283645D007ECBCC /* FeedAssembly.swift */; };
 		41E56539228818B3007ECBCC /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E56538228818B3007ECBCC /* ProfilePresenter.swift */; };
 		41E5653D228818CC007ECBCC /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5653C228818CC007ECBCC /* ProfileAssembly.swift */; };
@@ -68,13 +65,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		178560D59B3EC4C51877A89D /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		178561E822E6F11F1AAC0556 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		1785622BDD97E8558CC9C156 /* RootPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
-		1785623D20C83E365041BCCC /* RootInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
 		178562E881A3AB7453D8E9D8 /* SettingsProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsProtocols.swift; sourceTree = "<group>"; };
 		1785633EDB95672657AD0050 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		178563555CB37798F09630B3 /* FeedTabPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTabPresenter.swift; sourceTree = "<group>"; };
-		1785644C455B4F73929164B7 /* FeedProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedProtocols.swift; sourceTree = "<group>"; };
+		1785644C455B4F73929164B7 /* FeedModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedModule.swift; sourceTree = "<group>"; };
 		17856484BBAF76FC99AC46C2 /* TabBarProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarProtocols.swift; sourceTree = "<group>"; };
 		1785655C92B1FCBEF8324036 /* FeedTabAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTabAssembly.swift; sourceTree = "<group>"; };
 		17856626A9667A479B3C026F /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -86,7 +83,6 @@
 		17856748C7A0694C045E4B62 /* TabBarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
 		178567A6DB6F0856AF539A2D /* LoginAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		178568B04999935EC176F080 /* ProfileTabProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabProtocols.swift; sourceTree = "<group>"; };
-		1785692AB373709E2B73C255 /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		178569585E8C5BF114D797B1 /* ProfileTabPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabPresenter.swift; sourceTree = "<group>"; };
 		17856970A024CA6E38FBBCF4 /* FeedTabProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTabProtocols.swift; sourceTree = "<group>"; };
 		17856992B83BA90820B6C281 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -95,10 +91,9 @@
 		17856B3E3AA76C963B8A20B1 /* ProfileProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
 		17856B6C0A667EE3B1EEC3CD /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		17856C9A4EED5AF47DBC87A9 /* ProfileTabAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabAssembly.swift; sourceTree = "<group>"; };
-		17856CDD09BB5680203DC592 /* RootAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootAssembly.swift; sourceTree = "<group>"; };
 		17856D427EF64FEB85BA8795 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		17856E2E06AB9FFE96F6A2CA /* LoginProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
-		17856FFB5AB26D33860C992B /* RootProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootProtocols.swift; sourceTree = "<group>"; };
+		17856FFB5AB26D33860C992B /* RootModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootModule.swift; sourceTree = "<group>"; };
 		41AA815122817B6000AFB22E /* coordinators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coordinators.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AA815422817B6000AFB22E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41AA815B22817B6100AFB22E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,7 +101,6 @@
 		41AA816022817B6100AFB22E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41AA816522817B6100AFB22E /* coordinatorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coordinatorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AA816B22817B6100AFB22E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41E56531228363D5007ECBCC /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		41E565352283645D007ECBCC /* FeedAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAssembly.swift; sourceTree = "<group>"; };
 		41E56538228818B3007ECBCC /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		41E5653C228818CC007ECBCC /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
@@ -199,12 +193,9 @@
 		17856DF2056B45C85F44488B /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				17856CDD09BB5680203DC592 /* RootAssembly.swift */,
 				1785622BDD97E8558CC9C156 /* RootPresenter.swift */,
 				178561E822E6F11F1AAC0556 /* RootView.swift */,
-				17856FFB5AB26D33860C992B /* RootProtocols.swift */,
-				1785623D20C83E365041BCCC /* RootInteractor.swift */,
-				1785692AB373709E2B73C255 /* RootRouter.swift */,
+				17856FFB5AB26D33860C992B /* RootModule.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -256,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				41AA815422817B6000AFB22E /* AppDelegate.swift */,
+				178560D59B3EC4C51877A89D /* Module.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -293,10 +285,9 @@
 			isa = PBXGroup;
 			children = (
 				41E565352283645D007ECBCC /* FeedAssembly.swift */,
-				41E56531228363D5007ECBCC /* FeedPresenter.swift */,
 				41E5655722885BDB007ECBCC /* FeedView.swift */,
 				41E5655822885BDB007ECBCC /* FeedView.xib */,
-				1785644C455B4F73929164B7 /* FeedProtocols.swift */,
+				1785644C455B4F73929164B7 /* FeedModule.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -432,7 +423,6 @@
 			files = (
 				41E5655922885BDB007ECBCC /* FeedView.swift in Sources */,
 				41E5656522893B41007ECBCC /* SettingsAssembly.swift in Sources */,
-				41E56532228363D5007ECBCC /* FeedPresenter.swift in Sources */,
 				41E5656722893B4D007ECBCC /* SettingsPresenter.swift in Sources */,
 				41E5653D228818CC007ECBCC /* ProfileAssembly.swift in Sources */,
 				41E5655522885B5A007ECBCC /* ProfileView.swift in Sources */,
@@ -440,7 +430,7 @@
 				41AA815522817B6000AFB22E /* AppDelegate.swift in Sources */,
 				41E56539228818B3007ECBCC /* ProfilePresenter.swift in Sources */,
 				41E5656A22893B5E007ECBCC /* SettingsView.swift in Sources */,
-				178563B63A58EB4E24DB9335 /* FeedProtocols.swift in Sources */,
+				178563B63A58EB4E24DB9335 /* FeedModule.swift in Sources */,
 				1785661EA049CC25CAA5D495 /* ProfileProtocols.swift in Sources */,
 				178567F2481C27CEB640DDB7 /* SettingsProtocols.swift in Sources */,
 				17856A8AB19D8F8CA2FB2DFB /* SettingsInteractor.swift in Sources */,
@@ -459,17 +449,15 @@
 				17856011E3209765C939CD08 /* ProfileTabRouter.swift in Sources */,
 				17856902D88B1AD7D686970A /* ProfileTabAssembly.swift in Sources */,
 				178567D34D1CA08BC590929A /* ProfileTabPresenter.swift in Sources */,
-				17856BAF4BE027DCC5D35502 /* RootAssembly.swift in Sources */,
 				17856AC607DE84A1AED232BD /* RootPresenter.swift in Sources */,
 				178566A045F4AB4EEE0496FC /* RootView.swift in Sources */,
-				178568BB7A82B3A88DAF3FF6 /* RootProtocols.swift in Sources */,
-				1785666821D16AC41CAEB528 /* RootInteractor.swift in Sources */,
-				178566708840EDD14E7AE6A0 /* RootRouter.swift in Sources */,
+				178568BB7A82B3A88DAF3FF6 /* RootModule.swift in Sources */,
 				17856A5F573608AD90C219E6 /* LoginService.swift in Sources */,
 				17856F23236486C6B6246383 /* TabBarAssembly.swift in Sources */,
 				1785688F93DA520DDBAE4B23 /* TabBarPresenter.swift in Sources */,
 				178568302AD1D0D124A2EB3F /* TabBarView.swift in Sources */,
 				178565C43149DF28B887CAF7 /* TabBarProtocols.swift in Sources */,
+				17856425712BB1C0CFA31ACF /* Module.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

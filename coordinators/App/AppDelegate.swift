@@ -9,10 +9,11 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, RootOut {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     private var rootAssembly: RootAssembly?
+    private var rootIn: RootIn?
 
     func application(
         _ application: UIApplication,
@@ -21,7 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RootOut {
         let window = UIWindow(frame: UIScreen.main.bounds)
         let rootAssembly = self.makeRootAssembly()
 
-        window.rootViewController = rootAssembly.createModule { [weak self] _ in return self }
+        window.rootViewController = rootAssembly.createModule { [weak self] rootCmd in
+            guard let self = self else { return }
+
+            switch rootCmd {
+            case let .register(rootIn): self.rootIn = rootIn
+            }
+        }
         window.makeKeyAndVisible()
 
         self.window = window
@@ -62,8 +69,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RootOut {
 
     }
 
+    private var evenActivation = false
     func applicationDidBecomeActive(_ application: UIApplication) {
-
+        if (self.evenActivation) {
+            self.rootIn?.invoke(.processDeepLink("profile/settings"))
+        } else {
+            self.rootIn?.invoke(.processDeepLink("feed"))
+        }
+        self.evenActivation = !self.evenActivation
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

@@ -2,14 +2,17 @@ import UIKit
 
 // Mark: - Module
 
-protocol ProfileIn: class {
+enum ProfileInCmd {
 }
 
-protocol ProfileOut: class {
-    func profileOpenSettings()
+enum ProfileOutCmd {
+    case register(ProfileIn)
+    case openSettings
+    case getData((String) -> Void) // example of data query
 }
 
-typealias ProfileInOut = (ProfileIn) -> ProfileOut?
+typealias ProfileIn = ModuleIn<ProfileInCmd>
+typealias ProfileOut = (ProfileOutCmd) -> Void
 
 // Mark: - View
 
@@ -22,8 +25,3 @@ protocol ProfileViewOut: class {
 }
 
 typealias ProfileViewType = UIViewController
-
-// Mark: - Router
-
-protocol ProfileRouter: class {
-}

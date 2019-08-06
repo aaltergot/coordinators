@@ -1,26 +1,28 @@
-class SettingsPresenter: SettingsIn, SettingsViewOut {
+class SettingsPresenter: SettingsViewOut {
 
     private weak var viewIn: SettingsViewIn?
     private let interactor: SettingsInteractor
 
-    private let inOut: SettingsInOut
-    private weak var out: SettingsOut?
+    private let out: SettingsOut
 
     init(
         viewIn: SettingsViewIn?,
         interactor: SettingsInteractor,
-        inOut: @escaping SettingsInOut
+        out: @escaping SettingsOut
     ) {
         self.viewIn = viewIn
         self.interactor = interactor
-        self.inOut = inOut
+        self.out = out
     }
 
     func viewDidLoad() {
-        self.out = self.inOut(self)
+        self.out(.register(SettingsIn(ref: self) { [weak self] cmd in self?.invoke(cmd) }))
     }
 
     func logoutButtonPressed() {
         self.interactor.logout()
+    }
+
+    private func invoke(_ cmd: SettingsInCmd) {
     }
 }
