@@ -1,25 +1,22 @@
 import UIKit
 
-protocol ProfileTabView: class {
-}
 
-protocol ProfileTabViewOut: class {
-    func viewDidLoad()
-}
+// TODO remove
+class ProfileTabNavigationController: UINavigationController {
 
-class ProfileTabNavigationController: UINavigationController, ProfileTabView {
+    var view1: ProfileCoordinatorView!
+    unowned var profileCoordinatorIn: ProfileCoordinatorIn!
 
-    var presenter: (ProfileTabIn & ProfileTabViewOut)!
-
-    init(out: @escaping ProfileTabOut) {
+    init(out: @escaping ProfileCoordinatorOut) {
         super.init(nibName: nil, bundle: nil)
         self.setupView()
-        self.presenter = ProfileTabPresenter(
-            view: self,
-            coordinator: NavigationProfileTabCoordinator(self),
-            out: out
-        )
-        self.presenter.viewDidLoad()
+
+        let view = ProfileCoordinatorViewImpl(self)
+        let presenter = ProfileCoordinator(view: view, out: out)
+        presenter.openProfile()
+        view.presenter = presenter
+        self.view1 = view
+        self.profileCoordinatorIn = presenter
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -30,3 +27,5 @@ class ProfileTabNavigationController: UINavigationController, ProfileTabView {
         self.title = "Profile"
     }
 }
+
+

@@ -5,6 +5,7 @@ protocol FeedView: class {
 
 protocol FeedViewOut: class {
     func viewDidLoad()
+    func didPressButton()
 }
 
 class FeedViewController: UIViewController, FeedView {
@@ -19,6 +20,17 @@ class FeedViewController: UIViewController, FeedView {
 
     private func setupView() {
         self.title = "Feed"
+    }
+
+    var v: ProfileCoordinatorViewImpl? = nil
+    var p: ProfileCoordinator? = nil
+    @IBAction func buttonPressed(_ sender: Any) {
+        let view = ProfileCoordinatorViewImpl(self.navigationController!, push: true)
+        let presenter = ProfileCoordinator(view: view) { _ in }
+        self.v = view
+        self.p = presenter
+        view.presenter = presenter
+        presenter.openProfile()
     }
 }
 

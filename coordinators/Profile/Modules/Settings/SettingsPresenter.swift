@@ -1,4 +1,5 @@
 enum SettingsOutCmd {
+    case done
 }
 
 typealias SettingsOut = (SettingsOutCmd) -> Void
@@ -23,6 +24,7 @@ class SettingsPresenter: SettingsIn, SettingsViewOut {
     }
 
     func viewDidLoad() {
+//        self.out(.done)
     }
 
     func didPressLogout() {

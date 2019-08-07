@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		178560FA6AB5342300F499E4 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178564E90626DBDD41FBCFC7 /* ProfileCoordinator.swift */; };
-		178561919058BBC34B6BE98C /* ProfileTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178569D58DDE4681ED3C5B90 /* ProfileTabPresenter.swift */; };
 		178562FEF6B40D04258A9D04 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17856B220FCF4571F4454F18 /* LoginViewController.xib */; };
 		1785642D5390048BB3CFF2CD /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856729D58E8CC1725DB887 /* LoginPresenter.swift */; };
 		178564313A60753D7B6F1C1F /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178566AFA455A2DAC9ABCB50 /* RootCoordinator.swift */; };
 		1785647FD97749F0F964B317 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785633EDB95672657AD0050 /* LoginViewController.swift */; };
 		178564E78DD4EE8183AC871A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1785693E16E66BE885C3F2F1 /* SettingsViewController.xib */; };
+		178564F0643916AC4BED78CC /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856CD27EA15A4265BEBD8C /* ProfileCoordinator.swift */; };
 		178566A045F4AB4EEE0496FC /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178561E822E6F11F1AAC0556 /* RootNavigationController.swift */; };
 		1785680920C75528C6A46271 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178569A02F820C98266E94B9 /* SettingsPresenter.swift */; };
 		178568302AD1D0D124A2EB3F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856992B83BA90820B6C281 /* MainTabBarController.swift */; };
@@ -22,9 +21,9 @@
 		17856950F4A17D410F974395 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 178560D426482FDD7EEF4988 /* ProfileViewController.xib */; };
 		17856A5F573608AD90C219E6 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856626A9667A479B3C026F /* LoginService.swift */; };
 		17856AC607DE84A1AED232BD /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785622BDD97E8558CC9C156 /* RootPresenter.swift */; };
-		17856B76ECF156CE2718236D /* ProfileTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178560C7BCE62EA35BAD6602 /* ProfileTabCoordinator.swift */; };
 		17856C2C719DEB8E35CA1784 /* FeedTabNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856A590F21D3B59234D9EE /* FeedTabNavigationController.swift */; };
 		17856C84A076CEC80ADE1F55 /* ProfileTabNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856173EF0582F30D9FF421 /* ProfileTabNavigationController.swift */; };
+		17856CE4278A45FE22151881 /* ProfileCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856E8614C0A79CB198C8F0 /* ProfileCoordinatorView.swift */; };
 		17856CFB85311FF235F677AE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785630194AA528635B36FA1 /* SettingsViewController.swift */; };
 		17856E3E0E5654F7E9EC89AC /* FeedTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178563555CB37798F09630B3 /* FeedTabPresenter.swift */; };
 		17856E6FF4148DDF9D43130A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856106AB8648B95A86DD10 /* ProfileViewController.swift */; };
@@ -49,7 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		178560C7BCE62EA35BAD6602 /* ProfileTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabCoordinator.swift; sourceTree = "<group>"; };
 		178560D426482FDD7EEF4988 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		17856106AB8648B95A86DD10 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		17856173EF0582F30D9FF421 /* ProfileTabNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabNavigationController.swift; sourceTree = "<group>"; };
@@ -58,7 +56,6 @@
 		1785630194AA528635B36FA1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1785633EDB95672657AD0050 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		178563555CB37798F09630B3 /* FeedTabPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTabPresenter.swift; sourceTree = "<group>"; };
-		178564E90626DBDD41FBCFC7 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		17856626A9667A479B3C026F /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		178566AFA455A2DAC9ABCB50 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		178567109832FEA04A79AB48 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
@@ -67,10 +64,11 @@
 		1785693E16E66BE885C3F2F1 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		17856992B83BA90820B6C281 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		178569A02F820C98266E94B9 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
-		178569D58DDE4681ED3C5B90 /* ProfileTabPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabPresenter.swift; sourceTree = "<group>"; };
 		17856A590F21D3B59234D9EE /* FeedTabNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTabNavigationController.swift; sourceTree = "<group>"; };
 		17856B0230E7610F5F14937F /* FeedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		17856B220FCF4571F4454F18 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		17856CD27EA15A4265BEBD8C /* ProfileCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		17856E8614C0A79CB198C8F0 /* ProfileCoordinatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCoordinatorView.swift; sourceTree = "<group>"; };
 		41AA815122817B6000AFB22E /* coordinators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coordinators.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AA815422817B6000AFB22E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41AA815B22817B6100AFB22E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -139,6 +137,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		1785657E493DA4B458D68AE9 /* ProfileCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				17856E8614C0A79CB198C8F0 /* ProfileCoordinatorView.swift */,
+				17856CD27EA15A4265BEBD8C /* ProfileCoordinator.swift */,
+			);
+			path = ProfileCoordinator;
+			sourceTree = "<group>";
+		};
 		1785672E332FBDE81D775C8F /* FeedTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,18 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				17856173EF0582F30D9FF421 /* ProfileTabNavigationController.swift */,
-				178569D58DDE4681ED3C5B90 /* ProfileTabPresenter.swift */,
 			);
 			path = ProfileTab;
-			sourceTree = "<group>";
-		};
-		17856D697EE5D3BB3E6E41F8 /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-				178564E90626DBDD41FBCFC7 /* ProfileCoordinator.swift */,
-				178560C7BCE62EA35BAD6602 /* ProfileTabCoordinator.swift */,
-			);
-			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		17856DF2056B45C85F44488B /* Root */ = {
@@ -192,6 +189,7 @@
 				17856342868E076F95088E81 /* Profile */,
 				17856A634DD42AC6AD60658B /* ProfileTab */,
 				17856A5067EED3BFBF312F8D /* Settings */,
+				1785657E493DA4B458D68AE9 /* ProfileCoordinator */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -260,7 +258,6 @@
 		41AA81812281825100AFB22E /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				17856D697EE5D3BB3E6E41F8 /* Coordinators */,
 				17856EE1F33823BB911AE5E9 /* Modules */,
 			);
 			path = Profile;
@@ -400,16 +397,15 @@
 				17856A5F573608AD90C219E6 /* LoginService.swift in Sources */,
 				1785688F93DA520DDBAE4B23 /* MainTabBarPresenter.swift in Sources */,
 				178568302AD1D0D124A2EB3F /* MainTabBarController.swift in Sources */,
-				178560FA6AB5342300F499E4 /* ProfileCoordinator.swift in Sources */,
-				17856B76ECF156CE2718236D /* ProfileTabCoordinator.swift in Sources */,
 				1785692246B390CC6993B95F /* ProfilePresenter.swift in Sources */,
 				17856E6FF4148DDF9D43130A /* ProfileViewController.swift in Sources */,
 				17856C84A076CEC80ADE1F55 /* ProfileTabNavigationController.swift in Sources */,
-				178561919058BBC34B6BE98C /* ProfileTabPresenter.swift in Sources */,
 				1785680920C75528C6A46271 /* SettingsPresenter.swift in Sources */,
 				17856CFB85311FF235F677AE /* SettingsViewController.swift in Sources */,
 				178564313A60753D7B6F1C1F /* RootCoordinator.swift in Sources */,
 				17856EEA034CB65E9CC1E0FB /* FeedPresenter.swift in Sources */,
+				17856CE4278A45FE22151881 /* ProfileCoordinatorView.swift in Sources */,
+				178564F0643916AC4BED78CC /* ProfileCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

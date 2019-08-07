@@ -2,7 +2,7 @@ import UIKit
 
 protocol MainTabBarView: class {
     func addFeedTab(out: @escaping FeedTabOut)
-    func addProfileTab(out: @escaping ProfileTabOut) -> ProfileTabIn?
+    func addProfileTab(out: @escaping ProfileCoordinatorOut) -> ProfileCoordinatorIn?
     func showFeedTab()
     func showProfileTab()
 }
@@ -30,11 +30,11 @@ extension MainTabBarController: MainTabBarView {
         self.tabIndices[.feed] = self.children.count - 1
     }
 
-    func addProfileTab(out: @escaping ProfileTabOut) -> ProfileTabIn? {
+    func addProfileTab(out: @escaping ProfileCoordinatorOut) -> ProfileCoordinatorIn? {
         let profileTabNavigationController = ProfileTabNavigationController(out: out)
         self.addChild(profileTabNavigationController)
         self.tabIndices[.profile] = self.children.count - 1
-        return profileTabNavigationController.presenter
+        return profileTabNavigationController.profileCoordinatorIn
     }
 
     func showFeedTab() {

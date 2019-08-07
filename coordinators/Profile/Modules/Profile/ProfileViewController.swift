@@ -5,6 +5,7 @@ protocol ProfileView: class {
 
 protocol ProfileViewOut: class {
     func viewDidLoad()
+    func openSettings()
 }
 
 class ProfileViewController: UIViewController, ProfileView {
@@ -28,13 +29,9 @@ class ProfileViewController: UIViewController, ProfileView {
 
 extension ProfileViewController {
 
-    convenience init(nc: UINavigationController, out: @escaping ProfileOut) {
+    convenience init(out: @escaping ProfileOut) {
         self.init(nibName: String(describing: ProfileViewController.self), bundle: nil)
-        self.presenter = ProfilePresenter(
-            view: self,
-            coordinator: NavigationProfileCoordinator(nc),
-            out: out
-        )
+        self.presenter = ProfilePresenter(view: self, out: out)
     }
 }
 

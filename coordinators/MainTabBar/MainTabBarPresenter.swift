@@ -12,7 +12,7 @@ class MainTabBarPresenter: MainTabBarIn, MainTabBarViewOut {
     private weak var view: MainTabBarView?
     private let out: MainTabBarOut
 
-    private weak var profileTabIn: ProfileTabIn?
+    private weak var profileCoordinatorIn: ProfileCoordinatorIn?
 
     init(
         view: MainTabBarView?,
@@ -24,7 +24,7 @@ class MainTabBarPresenter: MainTabBarIn, MainTabBarViewOut {
 
     func viewDidLoad() {
         self.view?.addFeedTab { _ in }
-        self.profileTabIn = self.view?.addProfileTab { _ in }
+        self.profileCoordinatorIn = self.view?.addProfileTab { _ in }
         self.view?.showFeedTab()
     }
 
@@ -34,7 +34,7 @@ class MainTabBarPresenter: MainTabBarIn, MainTabBarViewOut {
             self.view?.showProfileTab()
             let rest = split.dropFirst().joined(separator: "/")
             if !rest.isEmpty {
-                profileTabIn?.processDeepLink(rest)
+                profileCoordinatorIn?.processDeepLink(rest)
             }
         } else {
             self.view?.showFeedTab()

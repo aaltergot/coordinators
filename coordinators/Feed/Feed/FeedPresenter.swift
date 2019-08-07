@@ -23,4 +23,9 @@ class FeedPresenter: FeedIn, FeedViewOut {
 
     func viewDidLoad() {
     }
+
+    func didPressButton() {
+
+
+    }
 }
