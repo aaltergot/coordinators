@@ -13,8 +13,8 @@ class RootPresenter: RootIn, RootViewOut {
     private let loginService: LoginService
     private let out: RootOut
 
-    private var mainTabBarIn: MainTabBarIn?
-    private var loginIn: LoginIn?
+    private weak var mainTabBarIn: MainTabBarIn?
+    private weak var loginIn: LoginIn?
 
     private var deferredDeepLink: String? = nil
 
@@ -53,7 +53,8 @@ class RootPresenter: RootIn, RootViewOut {
 
     private func openTabBar() {
         if self.mainTabBarIn == nil {
-            self.mainTabBarIn = self.view?.openMainTabBar { _ in self.processDeferredDeepLink() }
+            self.mainTabBarIn = self.view?.openMainTabBar { _ in }
+            self.processDeferredDeepLink()
         }
     }
 

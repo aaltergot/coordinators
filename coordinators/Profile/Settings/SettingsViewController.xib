@@ -24,7 +24,7 @@
                     <rect key="frame" x="183" y="433" width="48" height="30"/>
                     <state key="normal" title="Logout"/>
                     <connections>
-                        <action selector="didPressLogout" destination="-1" eventType="touchUpInside" id="qvA-JU-Lo0"/>
+                        <action selector="logoutButtonPressed" destination="-1" eventType="touchUpInside" id="qvA-JU-Lo0"/>
                     </connections>
                 </button>
             </subviews>
