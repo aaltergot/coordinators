@@ -33,6 +33,6 @@ extension FeedTabNavigationController: FeedTabView {
     func openFeed(out: @escaping FeedOut) -> FeedIn? {
         let vc = FeedViewController(out: out)
         self.setViewControllers([vc], animated: false)
-        return vc
+        return vc.presenter
     }
 }

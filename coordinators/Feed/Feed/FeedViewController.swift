@@ -1,20 +1,20 @@
 import UIKit
 
-protocol FeedIn: class {
+protocol FeedView: class {
 }
 
-enum FeedOutCmd {
+protocol FeedViewOut: class {
+    func viewDidLoad()
 }
 
-typealias FeedOut = (FeedOutCmd) -> Void
+class FeedViewController: UIViewController, FeedView {
 
-class FeedViewController: UIViewController, FeedIn {
-
-    private var out: FeedOut!
+    var presenter: (FeedViewOut & FeedIn)!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
+        self.presenter.viewDidLoad()
     }
 
     private func setupView() {
@@ -26,6 +26,6 @@ extension FeedViewController {
 
     convenience init(out: @escaping FeedOut) {
         self.init(nibName: String(describing: FeedViewController.self), bundle: nil)
-        self.out = out
+        self.presenter = FeedPresenter(view: self, out: out)
     }
 }

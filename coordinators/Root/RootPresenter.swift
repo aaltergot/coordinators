@@ -10,6 +10,7 @@ typealias RootOut = (RootOutCmd) -> Void
 class RootPresenter: RootIn, RootViewOut {
 
     private weak var view: RootView?
+    private let coordinator: RootCoordinator
     private let loginService: LoginService
     private let out: RootOut
 
@@ -20,10 +21,12 @@ class RootPresenter: RootIn, RootViewOut {
 
     init(
         view: RootView?,
+        coordinator: RootCoordinator,
         loginService: LoginService,
         out: @escaping RootOut
     ) {
         self.view = view
+        self.coordinator = coordinator
         self.loginService = loginService
         self.out = out
     }
@@ -53,14 +56,14 @@ class RootPresenter: RootIn, RootViewOut {
 
     private func openTabBar() {
         if self.mainTabBarIn == nil {
-            self.mainTabBarIn = self.view?.openMainTabBar { _ in }
+            self.mainTabBarIn = self.coordinator.openMainTabBar { _ in }
             self.processDeferredDeepLink()
         }
     }
 
     private func openLogin() {
         if self.loginIn == nil {
-            self.loginIn = self.view?.openLogin { _ in }
+            self.loginIn = self.coordinator.openLogin { _ in }
         }
     }
 }

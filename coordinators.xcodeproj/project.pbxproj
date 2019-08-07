@@ -7,31 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		178560FA6AB5342300F499E4 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178564E90626DBDD41FBCFC7 /* ProfileCoordinator.swift */; };
+		178561919058BBC34B6BE98C /* ProfileTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178569D58DDE4681ED3C5B90 /* ProfileTabPresenter.swift */; };
 		178562FEF6B40D04258A9D04 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17856B220FCF4571F4454F18 /* LoginViewController.xib */; };
 		1785642D5390048BB3CFF2CD /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856729D58E8CC1725DB887 /* LoginPresenter.swift */; };
+		178564313A60753D7B6F1C1F /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178566AFA455A2DAC9ABCB50 /* RootCoordinator.swift */; };
 		1785647FD97749F0F964B317 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785633EDB95672657AD0050 /* LoginViewController.swift */; };
+		178564E78DD4EE8183AC871A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1785693E16E66BE885C3F2F1 /* SettingsViewController.xib */; };
 		178566A045F4AB4EEE0496FC /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178561E822E6F11F1AAC0556 /* RootNavigationController.swift */; };
-		178567D34D1CA08BC590929A /* ProfileTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178569585E8C5BF114D797B1 /* ProfileTabPresenter.swift */; };
+		1785680920C75528C6A46271 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178569A02F820C98266E94B9 /* SettingsPresenter.swift */; };
 		178568302AD1D0D124A2EB3F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856992B83BA90820B6C281 /* MainTabBarController.swift */; };
 		1785688F93DA520DDBAE4B23 /* MainTabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856748C7A0694C045E4B62 /* MainTabBarPresenter.swift */; };
+		1785692246B390CC6993B95F /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178567109832FEA04A79AB48 /* ProfilePresenter.swift */; };
+		17856950F4A17D410F974395 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 178560D426482FDD7EEF4988 /* ProfileViewController.xib */; };
 		17856A5F573608AD90C219E6 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856626A9667A479B3C026F /* LoginService.swift */; };
 		17856AC607DE84A1AED232BD /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785622BDD97E8558CC9C156 /* RootPresenter.swift */; };
+		17856B76ECF156CE2718236D /* ProfileTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178560C7BCE62EA35BAD6602 /* ProfileTabCoordinator.swift */; };
 		17856C2C719DEB8E35CA1784 /* FeedTabNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856A590F21D3B59234D9EE /* FeedTabNavigationController.swift */; };
-		17856D3A52EA786AC62D303E /* ProfileTabNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178566716F1BE7AC576F0F2D /* ProfileTabNavigationController.swift */; };
+		17856C84A076CEC80ADE1F55 /* ProfileTabNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856173EF0582F30D9FF421 /* ProfileTabNavigationController.swift */; };
+		17856CFB85311FF235F677AE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785630194AA528635B36FA1 /* SettingsViewController.swift */; };
 		17856E3E0E5654F7E9EC89AC /* FeedTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178563555CB37798F09630B3 /* FeedTabPresenter.swift */; };
+		17856E6FF4148DDF9D43130A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856106AB8648B95A86DD10 /* ProfileViewController.swift */; };
+		17856EEA034CB65E9CC1E0FB /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856B0230E7610F5F14937F /* FeedPresenter.swift */; };
 		41AA815522817B6000AFB22E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA815422817B6000AFB22E /* AppDelegate.swift */; };
 		41AA815C22817B6100AFB22E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41AA815B22817B6100AFB22E /* Assets.xcassets */; };
 		41AC13162283131700D0A888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AA815D22817B6100AFB22E /* LaunchScreen.storyboard */; };
-		41E56539228818B3007ECBCC /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E56538228818B3007ECBCC /* ProfilePresenter.swift */; };
-		41E5655522885B5A007ECBCC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5655322885B5A007ECBCC /* ProfileViewController.swift */; };
-		41E5655622885B5A007ECBCC /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E5655422885B5A007ECBCC /* ProfileViewController.xib */; };
 		41E5655922885BDB007ECBCC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5655722885BDB007ECBCC /* FeedViewController.swift */; };
 		41E5655A22885BDB007ECBCC /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E5655822885BDB007ECBCC /* FeedViewController.xib */; };
 		41E5655C22885FBA007ECBCC /* LoginServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5655B22885FBA007ECBCC /* LoginServiceTests.swift */; };
 		41E5655E228862CD007ECBCC /* RootPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5655D228862CD007ECBCC /* RootPresenterTests.swift */; };
-		41E5656722893B4D007ECBCC /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5656622893B4D007ECBCC /* SettingsPresenter.swift */; };
-		41E5656A22893B5E007ECBCC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5656822893B5E007ECBCC /* SettingsViewController.swift */; };
-		41E5656B22893B5E007ECBCC /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E5656922893B5E007ECBCC /* SettingsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,17 +49,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		178560C7BCE62EA35BAD6602 /* ProfileTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabCoordinator.swift; sourceTree = "<group>"; };
+		178560D426482FDD7EEF4988 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		17856106AB8648B95A86DD10 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		17856173EF0582F30D9FF421 /* ProfileTabNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabNavigationController.swift; sourceTree = "<group>"; };
 		178561E822E6F11F1AAC0556 /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		1785622BDD97E8558CC9C156 /* RootPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
+		1785630194AA528635B36FA1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1785633EDB95672657AD0050 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		178563555CB37798F09630B3 /* FeedTabPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTabPresenter.swift; sourceTree = "<group>"; };
+		178564E90626DBDD41FBCFC7 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		17856626A9667A479B3C026F /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		178566716F1BE7AC576F0F2D /* ProfileTabNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabNavigationController.swift; sourceTree = "<group>"; };
+		178566AFA455A2DAC9ABCB50 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		178567109832FEA04A79AB48 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		17856729D58E8CC1725DB887 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		17856748C7A0694C045E4B62 /* MainTabBarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarPresenter.swift; sourceTree = "<group>"; };
-		178569585E8C5BF114D797B1 /* ProfileTabPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabPresenter.swift; sourceTree = "<group>"; };
+		1785693E16E66BE885C3F2F1 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		17856992B83BA90820B6C281 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		178569A02F820C98266E94B9 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		178569D58DDE4681ED3C5B90 /* ProfileTabPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabPresenter.swift; sourceTree = "<group>"; };
 		17856A590F21D3B59234D9EE /* FeedTabNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTabNavigationController.swift; sourceTree = "<group>"; };
+		17856B0230E7610F5F14937F /* FeedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		17856B220FCF4571F4454F18 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		41AA815122817B6000AFB22E /* coordinators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coordinators.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AA815422817B6000AFB22E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,16 +78,10 @@
 		41AA816022817B6100AFB22E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41AA816522817B6100AFB22E /* coordinatorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coordinatorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AA816B22817B6100AFB22E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41E56538228818B3007ECBCC /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
-		41E5655322885B5A007ECBCC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		41E5655422885B5A007ECBCC /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		41E5655722885BDB007ECBCC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		41E5655822885BDB007ECBCC /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
 		41E5655B22885FBA007ECBCC /* LoginServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceTests.swift; sourceTree = "<group>"; };
 		41E5655D228862CD007ECBCC /* RootPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenterTests.swift; sourceTree = "<group>"; };
-		41E5656622893B4D007ECBCC /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
-		41E5656822893B5E007ECBCC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		41E5656922893B5E007ECBCC /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,16 @@
 				17856626A9667A479B3C026F /* LoginService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		17856342868E076F95088E81 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				178567109832FEA04A79AB48 /* ProfilePresenter.swift */,
+				17856106AB8648B95A86DD10 /* ProfileViewController.swift */,
+				178560D426482FDD7EEF4988 /* ProfileViewController.xib */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		178563FD675F41A9F06E537B /* MainTabBar */ = {
@@ -130,13 +148,32 @@
 			path = FeedTab;
 			sourceTree = "<group>";
 		};
-		17856AA708B39F4A59B8568C /* ProfileTab */ = {
+		17856A5067EED3BFBF312F8D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				178566716F1BE7AC576F0F2D /* ProfileTabNavigationController.swift */,
-				178569585E8C5BF114D797B1 /* ProfileTabPresenter.swift */,
+				178569A02F820C98266E94B9 /* SettingsPresenter.swift */,
+				1785630194AA528635B36FA1 /* SettingsViewController.swift */,
+				1785693E16E66BE885C3F2F1 /* SettingsViewController.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		17856A634DD42AC6AD60658B /* ProfileTab */ = {
+			isa = PBXGroup;
+			children = (
+				17856173EF0582F30D9FF421 /* ProfileTabNavigationController.swift */,
+				178569D58DDE4681ED3C5B90 /* ProfileTabPresenter.swift */,
 			);
 			path = ProfileTab;
+			sourceTree = "<group>";
+		};
+		17856D697EE5D3BB3E6E41F8 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				178564E90626DBDD41FBCFC7 /* ProfileCoordinator.swift */,
+				178560C7BCE62EA35BAD6602 /* ProfileTabCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		17856DF2056B45C85F44488B /* Root */ = {
@@ -144,8 +181,19 @@
 			children = (
 				1785622BDD97E8558CC9C156 /* RootPresenter.swift */,
 				178561E822E6F11F1AAC0556 /* RootNavigationController.swift */,
+				178566AFA455A2DAC9ABCB50 /* RootCoordinator.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		17856EE1F33823BB911AE5E9 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				17856342868E076F95088E81 /* Profile */,
+				17856A634DD42AC6AD60658B /* ProfileTab */,
+				17856A5067EED3BFBF312F8D /* Settings */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		41AA814822817B6000AFB22E = {
@@ -212,9 +260,8 @@
 		41AA81812281825100AFB22E /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				41E5656322893B16007ECBCC /* Settings */,
-				41E56537228818A0007ECBCC /* Profile */,
-				17856AA708B39F4A59B8568C /* ProfileTab */,
+				17856D697EE5D3BB3E6E41F8 /* Coordinators */,
+				17856EE1F33823BB911AE5E9 /* Modules */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -233,28 +280,9 @@
 			children = (
 				41E5655722885BDB007ECBCC /* FeedViewController.swift */,
 				41E5655822885BDB007ECBCC /* FeedViewController.xib */,
+				17856B0230E7610F5F14937F /* FeedPresenter.swift */,
 			);
 			path = Feed;
-			sourceTree = "<group>";
-		};
-		41E56537228818A0007ECBCC /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				41E56538228818B3007ECBCC /* ProfilePresenter.swift */,
-				41E5655322885B5A007ECBCC /* ProfileViewController.swift */,
-				41E5655422885B5A007ECBCC /* ProfileViewController.xib */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		41E5656322893B16007ECBCC /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				41E5656622893B4D007ECBCC /* SettingsPresenter.swift */,
-				41E5656822893B5E007ECBCC /* SettingsViewController.swift */,
-				41E5656922893B5E007ECBCC /* SettingsViewController.xib */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,11 +367,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				41AC13162283131700D0A888 /* LaunchScreen.storyboard in Resources */,
-				41E5656B22893B5E007ECBCC /* SettingsViewController.xib in Resources */,
 				41E5655A22885BDB007ECBCC /* FeedViewController.xib in Resources */,
 				41AA815C22817B6100AFB22E /* Assets.xcassets in Resources */,
-				41E5655622885B5A007ECBCC /* ProfileViewController.xib in Resources */,
 				178562FEF6B40D04258A9D04 /* LoginViewController.xib in Resources */,
+				17856950F4A17D410F974395 /* ProfileViewController.xib in Resources */,
+				178564E78DD4EE8183AC871A /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,22 +390,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				41E5655922885BDB007ECBCC /* FeedViewController.swift in Sources */,
-				41E5656722893B4D007ECBCC /* SettingsPresenter.swift in Sources */,
-				41E5655522885B5A007ECBCC /* ProfileViewController.swift in Sources */,
 				41AA815522817B6000AFB22E /* AppDelegate.swift in Sources */,
-				41E56539228818B3007ECBCC /* ProfilePresenter.swift in Sources */,
-				41E5656A22893B5E007ECBCC /* SettingsViewController.swift in Sources */,
 				17856E3E0E5654F7E9EC89AC /* FeedTabPresenter.swift in Sources */,
 				17856C2C719DEB8E35CA1784 /* FeedTabNavigationController.swift in Sources */,
 				1785642D5390048BB3CFF2CD /* LoginPresenter.swift in Sources */,
 				1785647FD97749F0F964B317 /* LoginViewController.swift in Sources */,
-				17856D3A52EA786AC62D303E /* ProfileTabNavigationController.swift in Sources */,
-				178567D34D1CA08BC590929A /* ProfileTabPresenter.swift in Sources */,
 				17856AC607DE84A1AED232BD /* RootPresenter.swift in Sources */,
 				178566A045F4AB4EEE0496FC /* RootNavigationController.swift in Sources */,
 				17856A5F573608AD90C219E6 /* LoginService.swift in Sources */,
 				1785688F93DA520DDBAE4B23 /* MainTabBarPresenter.swift in Sources */,
 				178568302AD1D0D124A2EB3F /* MainTabBarController.swift in Sources */,
+				178560FA6AB5342300F499E4 /* ProfileCoordinator.swift in Sources */,
+				17856B76ECF156CE2718236D /* ProfileTabCoordinator.swift in Sources */,
+				1785692246B390CC6993B95F /* ProfilePresenter.swift in Sources */,
+				17856E6FF4148DDF9D43130A /* ProfileViewController.swift in Sources */,
+				17856C84A076CEC80ADE1F55 /* ProfileTabNavigationController.swift in Sources */,
+				178561919058BBC34B6BE98C /* ProfileTabPresenter.swift in Sources */,
+				1785680920C75528C6A46271 /* SettingsPresenter.swift in Sources */,
+				17856CFB85311FF235F677AE /* SettingsViewController.swift in Sources */,
+				178564313A60753D7B6F1C1F /* RootCoordinator.swift in Sources */,
+				17856EEA034CB65E9CC1E0FB /* FeedPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

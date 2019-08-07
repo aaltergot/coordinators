@@ -10,15 +10,18 @@ protocol ProfileIn: class {
 class ProfilePresenter: ProfileIn, ProfileViewOut {
 
     private weak var view: ProfileView?
+    private let coordinator: ProfileCoordinator
     private let out: ProfileOut
 
     private weak var settingsIn: SettingsIn?
 
     init(
         view: ProfileView?,
+        coordinator: ProfileCoordinator,
         out: @escaping ProfileOut
     ) {
         self.view = view
+        self.coordinator = coordinator
         self.out = out
     }
 
@@ -27,7 +30,7 @@ class ProfilePresenter: ProfileIn, ProfileViewOut {
 
     func openSettings() {
         if self.settingsIn == nil {
-            self.settingsIn = self.view?.openSettings { _ in }
+            self.settingsIn = self.coordinator.openSettings { _ in }
         }
     }
 }

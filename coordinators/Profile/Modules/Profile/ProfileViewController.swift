@@ -1,14 +1,13 @@
 import UIKit
 
 protocol ProfileView: class {
-    func openSettings(out: @escaping SettingsOut) -> SettingsIn?
 }
 
 protocol ProfileViewOut: class {
     func viewDidLoad()
 }
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, ProfileView {
     
     var presenter: (ProfileViewOut & ProfileIn)!
 
@@ -27,20 +26,15 @@ class ProfileViewController: UIViewController {
     }
 }
 
-extension ProfileViewController: ProfileView {
-
-    func openSettings(out: @escaping SettingsOut) -> SettingsIn? {
-        guard let nc = self.navigationController else { return nil }
-        let vc = SettingsViewController(out: out)
-        nc.pushViewController(vc, animated: true)
-        return vc.presenter
-    }
-}
-
 extension ProfileViewController {
 
-    convenience init(out: @escaping ProfileOut) {
+    convenience init(nc: UINavigationController, out: @escaping ProfileOut) {
         self.init(nibName: String(describing: ProfileViewController.self), bundle: nil)
-        self.presenter = ProfilePresenter(view: self, out: out)
+        self.presenter = ProfilePresenter(
+            view: self,
+            coordinator: NavigationProfileCoordinator(nc),
+            out: out
+        )
     }
 }
+

@@ -10,15 +10,18 @@ typealias ProfileTabOut = (ProfileTabOutCmd) -> Void
 class ProfileTabPresenter: ProfileTabIn, ProfileTabViewOut {
 
     private weak var view: ProfileTabView?
+    private let coordinator: ProfileTabCoordinator
     private let out: ProfileTabOut
 
     private weak var profileIn: ProfileIn?
 
     init(
         view: ProfileTabView?,
+        coordinator: ProfileTabCoordinator,
         out: @escaping ProfileTabOut
     ) {
         self.view = view
+        self.coordinator = coordinator
         self.out = out
     }
 
@@ -36,7 +39,7 @@ class ProfileTabPresenter: ProfileTabIn, ProfileTabViewOut {
 
     private func openProfile() {
         if self.profileIn == nil {
-            self.profileIn = self.view?.openProfile { _ in }
+            self.profileIn = self.coordinator.openProfile { _ in }
         }
     }
 }
