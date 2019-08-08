@@ -9,19 +9,19 @@ protocol ProfileCoordinatorIn: class {
     func openSettings()
 }
 
-class ProfileCoordinator: ProfileCoordinatorIn, ProfileCoordinatorViewOut {
+class ProfileCoordinator: ProfileCoordinatorIn {
 
-    private weak var view: ProfileCoordinatorView?
+    private var router: ProfileRouter
     private let out: ProfileCoordinatorOut
 
     private weak var settingsIn: SettingsIn?
     private weak var profileIn: ProfileIn?
 
     init(
-        view: ProfileCoordinatorView?,
+        router: ProfileRouter,
         out: @escaping ProfileCoordinatorOut
     ) {
-        self.view = view
+        self.router = router
         self.out = out
     }
 
@@ -35,10 +35,10 @@ class ProfileCoordinator: ProfileCoordinatorIn, ProfileCoordinatorViewOut {
 
     func openProfile() {
         if self.profileIn == nil {
-            self.profileIn = self.view?.openProfile { [weak self] cmd in
+            self.profileIn = self.router.openProfile { cmd in
                 switch cmd {
                 case .openSettings:
-                    self?.openSettings()
+                    self.openSettings()
                 }
             }
         }
@@ -46,7 +46,20 @@ class ProfileCoordinator: ProfileCoordinatorIn, ProfileCoordinatorViewOut {
 
     func openSettings() {
         if self.settingsIn == nil {
-            self.settingsIn = self.view?.openSettings { _ in }
+            self.settingsIn = self.router.openSettings { _ in }
         }
+    }
+}
+
+import UIKit
+
+extension ProfileCoordinator {
+    convenience init (
+        _ nc: UINavigationController?,
+        push: Bool = false,
+        out: @escaping (ProfileCoordinatorOutCmd) -> Void) {
+        self.init(
+            router: ProfileRouterImpl(nc, push: push),
+            out: out)
     }
 }

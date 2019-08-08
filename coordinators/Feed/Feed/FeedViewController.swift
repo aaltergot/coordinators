@@ -22,15 +22,12 @@ class FeedViewController: UIViewController, FeedView {
         self.title = "Feed"
     }
 
-    var v: ProfileCoordinatorViewImpl? = nil
-    var p: ProfileCoordinator? = nil
     @IBAction func buttonPressed(_ sender: Any) {
-        let view = ProfileCoordinatorViewImpl(self.navigationController!, push: true)
-        let presenter = ProfileCoordinator(view: view) { _ in }
-        self.v = view
-        self.p = presenter
-        view.presenter = presenter
-        presenter.openProfile()
+        let coordinator = ProfileCoordinator(
+            self.navigationController,
+            push: true,
+            out: { _ in })
+        coordinator.openProfile()
     }
 }
 

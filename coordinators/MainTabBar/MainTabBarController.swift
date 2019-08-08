@@ -31,10 +31,13 @@ extension MainTabBarController: MainTabBarView {
     }
 
     func addProfileTab(out: @escaping ProfileCoordinatorOut) -> ProfileCoordinatorIn? {
-        let profileTabNavigationController = ProfileTabNavigationController(out: out)
+        let profileTabNavigationController = UINavigationController()
+        profileTabNavigationController.title = "Profile"
         self.addChild(profileTabNavigationController)
         self.tabIndices[.profile] = self.children.count - 1
-        return profileTabNavigationController.profileCoordinatorIn
+        let coordinator = ProfileCoordinator(profileTabNavigationController, out: out)
+        coordinator.openProfile()
+        return coordinator
     }
 
     func showFeedTab() {
