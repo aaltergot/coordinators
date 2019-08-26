@@ -1,20 +1,16 @@
 import UIKit
 
-protocol ProfileCoordinatorView: class {
+protocol ProfileRouter: AnyObject {
     func openProfile(out: @escaping ProfileOut) -> ProfileIn?
     func openSettings(out: @escaping SettingsOut) -> SettingsIn?
 }
 
-protocol ProfileCoordinatorViewOut: class {
-}
+class ProfileRouterImpl: ProfileRouter {
 
-class ProfileCoordinatorViewImpl: ProfileCoordinatorView {
-
-    private unowned let nc: UINavigationController
-    var presenter: (ProfileCoordinatorViewOut & ProfileCoordinatorIn)!
+    private weak var nc: UINavigationController?
     let push: Bool
 
-    init(_ nc: UINavigationController, push: Bool = false) {
+    init(_ nc: UINavigationController?, push: Bool = false) {
         self.nc = nc
         self.push = push
     }
@@ -23,22 +19,20 @@ class ProfileCoordinatorViewImpl: ProfileCoordinatorView {
         let vc = SettingsViewController { [weak self] cmd in
             switch cmd {
             case .done:
-                self?.nc.popViewController(animated: true)
-            default:
-                break
+                self?.nc?.popViewController(animated: true)
             }
             out(cmd)
         }
-        self.nc.pushViewController(vc, animated: true)
+        self.nc?.pushViewController(vc, animated: true)
         return vc.presenter
     }
 
     func openProfile(out: @escaping ProfileOut) -> ProfileIn? {
         let vc = ProfileViewController(out: out)
         if self.push {
-            self.nc.pushViewController(vc, animated: true)
+            self.nc?.pushViewController(vc, animated: true)
         } else {
-            self.nc.setViewControllers([vc], animated: true)
+            self.nc?.setViewControllers([vc], animated: true)
         }
         return vc.presenter
     }
