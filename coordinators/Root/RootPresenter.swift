@@ -1,22 +1,32 @@
-class RootPresenter: RootViewOut {
+protocol RootIn: class {
+    func processDeepLink(_ deepLink: String)
+}
 
-    private weak var viewIn: RootViewIn?
+enum RootOutCmd {
+}
+
+typealias RootOut = (RootOutCmd) -> Void
+
+class RootPresenter: RootIn, RootViewOut {
+
+    private weak var view: RootView?
+    private let coordinator: RootCoordinator
     private let loginService: LoginService
-
     private let out: RootOut
 
-    private var tabBarIn: TabBarIn?
-    private var feedTabIn: FeedTabIn?
-    private var profileTabIn: ProfileTabIn?
+    private weak var mainTabBarIn: MainTabBarIn?
+    private weak var loginIn: LoginIn?
 
     private var deferredDeepLink: String? = nil
 
     init(
-        viewIn: RootViewIn?,
+        view: RootView?,
+        coordinator: RootCoordinator,
         loginService: LoginService,
         out: @escaping RootOut
     ) {
-        self.viewIn = viewIn
+        self.view = view
+        self.coordinator = coordinator
         self.loginService = loginService
         self.out = out
     }
@@ -28,31 +38,14 @@ class RootPresenter: RootViewOut {
         } else {
             self.openLogin()
         }
-
-        self.out(.register(RootIn(ref: self) { [weak self] cmd in self?.invoke(cmd) }))
     }
 
-    private func invoke(_ cmd: RootInCmd) { switch cmd {
-    case let .processDeepLink(deepLink): self.processDeepLink(deepLink)
-    }}
-
-    private func processDeepLink(_ deepLink: String) {
-        guard let tabBarIn = self.tabBarIn, tabBarIn.isAlive(),
-              let profileTabIn = self.profileTabIn, profileTabIn.isAlive(),
-              let feedTabIn = self.feedTabIn, feedTabIn.isAlive() else {
+    func processDeepLink(_ deepLink: String) {
+        guard let mainTabBarIn = self.mainTabBarIn else {
             self.deferredDeepLink = deepLink
             return
         }
-        let split = deepLink.split(separator: "/")
-        if split.first == "profile" {
-            tabBarIn.invoke(.showTab(.profile))
-            let rest = split.dropFirst().joined(separator: "/")
-            if !rest.isEmpty {
-                profileTabIn.invoke(.processDeepLink(rest))
-            }
-        } else {
-            tabBarIn.invoke(.showTab(.feed))
-        }
+        mainTabBarIn.processDeepLink(deepLink)
     }
 
     private func processDeferredDeepLink() {
@@ -62,39 +55,16 @@ class RootPresenter: RootViewOut {
     }
 
     private func openTabBar() {
-        self.viewIn?.openTabBar(
-            feedTabOut: { [weak self] feedTabCmd in
-                guard let self = self else { return }
-
-                switch feedTabCmd {
-                case let .register(feedTabIn):
-                    self.feedTabIn = feedTabIn
-                    self.processDeferredDeepLink()
-                }
-            },
-            profileTabOut: { [weak self] profileTabCmd in
-                guard let self = self else { return }
-
-                switch profileTabCmd {
-                case let .register(profileTabIn):
-                    self.profileTabIn = profileTabIn
-                    self.processDeferredDeepLink()
-                }
-            },
-            tabBarOut: { [weak self] tabBarCmd in
-                guard let self = self else { return }
-
-                switch tabBarCmd {
-                case let .register(tabBarIn):
-                    self.tabBarIn = tabBarIn
-                    self.processDeferredDeepLink()
-                }
-            }
-        )
+        if self.mainTabBarIn == nil {
+            self.mainTabBarIn = self.coordinator.openMainTabBar { _ in }
+            self.processDeferredDeepLink()
+        }
     }
 
     private func openLogin() {
-        self.viewIn?.openLogin { _ in }
+        if self.loginIn == nil {
+            self.loginIn = self.coordinator.openLogin { _ in }
+        }
     }
 }
 

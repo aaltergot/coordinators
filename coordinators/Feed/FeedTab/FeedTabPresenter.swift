@@ -1,25 +1,33 @@
-class FeedTabPresenter: FeedTabViewOut {
+protocol FeedTabIn: class {
+}
 
-    private weak var viewIn: FeedTabViewIn?
-    private let router: FeedTabRouter
+enum FeedTabOutCmd {
+}
 
+typealias FeedTabOut = (FeedTabOutCmd) -> Void
+
+class FeedTabPresenter: FeedTabIn, FeedTabViewOut {
+
+    private weak var view: FeedTabView?
     private let out: FeedTabOut
 
+    private weak var feedIn: FeedIn?
+
     init(
-        viewIn: FeedTabViewIn?,
-        router: FeedTabRouter,
+        view: FeedTabView?,
         out: @escaping FeedTabOut
     ) {
-        self.viewIn = viewIn
-        self.router = router
+        self.view = view
         self.out = out
     }
 
-    func viewCreated() {
-        self.router.openFeed { _ in }
-        self.out(.register(ModuleIn(ref: self) { [weak self] cmd in self?.invoke(cmd) }))
+    func viewDidLoad() {
+        self.openFeed()
     }
 
-    private func invoke(_ cmd: FeedTabInCmd) {}
-
+    private func openFeed() {
+        if self.feedIn == nil {
+            self.feedIn = self.view?.openFeed { _ in }
+        }
+    }
 }
