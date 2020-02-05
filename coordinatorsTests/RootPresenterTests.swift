@@ -6,6 +6,7 @@
 //  Copyright © 2019 ak. All rights reserved.
 //
 
+/*
 import XCTest
 @testable import coordinators
 
@@ -79,3 +80,5 @@ class RootPresenterTests: XCTestCase {
         XCTAssertEqual(rootViewInStub.showTabBarCalled, true)
     }
 }
+
+ */

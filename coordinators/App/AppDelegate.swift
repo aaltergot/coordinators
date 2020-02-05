@@ -11,6 +11,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
+        
+        self.initialSetup()
 
         let rootNavigationController = RootNavigationController { _ in }
         window.rootViewController = rootNavigationController
@@ -48,5 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
 
+    private func initialSetup() {
+        AppServiceLocator.setup()
+        SelfStudyServiceLocator.shared = AppServiceLocator.shared
+        LeadGenServiceLocator.shared = AppServiceLocator.shared
+    }
 }
 
