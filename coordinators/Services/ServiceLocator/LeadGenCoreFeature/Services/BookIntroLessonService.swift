@@ -1,5 +1,5 @@
 public protocol HasBookIntroLessonService {
-    var bookIntroLessonService: BookIntroLessonService! { get }
+    var bookIntroLessonService: BookIntroLessonService { get }
 }
 
 public protocol BookIntroLessonService {

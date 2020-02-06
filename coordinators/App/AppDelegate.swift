@@ -51,9 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func initialSetup() {
-        AppServiceLocator.setup()
         SelfStudyServiceLocator.shared = AppServiceLocator.shared
         LeadGenServiceLocator.shared = AppServiceLocator.shared
     }
 }
-

@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol HasLoginService {
-    var loginService: LoginService! { get }
+    var loginService: LoginService { get }
 }
 
 public protocol LoginService: class {

@@ -1,5 +1,5 @@
 public protocol HasSplitTestService {
-    var splitTestService: SplitTestService! { get }
+    var splitTestService: SplitTestService { get }
 }
 
 public protocol SplitTestService {

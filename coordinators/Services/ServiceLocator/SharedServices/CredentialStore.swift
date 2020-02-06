@@ -1,5 +1,5 @@
 public protocol HasCredentialStore {
-    var credentialStore: CredentialStore! { get }
+    var credentialStore: CredentialStore { get }
 }
 
 public protocol CredentialStore {

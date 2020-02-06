@@ -1,5 +1,5 @@
 public protocol HasUserInfoService {
-    var userInfoService: UserInfoService! { get }
+    var userInfoService: UserInfoService { get }
 }
 
 public protocol UserInfoService {

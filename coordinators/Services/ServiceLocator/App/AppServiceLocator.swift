@@ -6,31 +6,28 @@ class AppServiceLocator:
     HasUserInfoService,
     HasBookIntroLessonService {
     
-    static var shared = AppServiceLocator()
+    static var shared = AppServiceLocator(
+        loginService: LoginServiceImpl.shared,
+        credentialStore: CredentialStoreImpl(),
+        userInfoService: UserInfoServiceImpl(),
+        bookIntroLessonService: BookIntroLessonServiceImpl()
+    )
     
-    private(set) var loginService: LoginService!
-    private(set) var credentialStore: CredentialStore!
-    private(set) var userInfoService: UserInfoService!
-    private(set) var bookIntroLessonService: BookIntroLessonService!
-
-    static func setup() {
-        self.setup(
-            loginService: LoginServiceImpl.shared,
-            credentialStore: CredentialStoreImpl(),
-            userInfoService: UserInfoServiceImpl(),
-            bookIntroLessonService: BookIntroLessonServiceImpl()
-        )
-    }
+    private(set) var loginService: LoginService
+    private(set) var credentialStore: CredentialStore
+    private(set) var userInfoService: UserInfoService
+    private(set) var bookIntroLessonService: BookIntroLessonService
     
-    static func setup(
+    init(
         loginService: LoginService,
         credentialStore: CredentialStore,
         userInfoService: UserInfoService,
         bookIntroLessonService: BookIntroLessonService
     ) {
-        self.shared.loginService = loginService
-        self.shared.credentialStore = credentialStore
-        self.shared.userInfoService = userInfoService
-        self.shared.bookIntroLessonService = bookIntroLessonService
+        self.loginService = loginService
+        self.credentialStore = credentialStore
+        self.userInfoService = userInfoService
+        self.bookIntroLessonService = bookIntroLessonService
     }
 }
+
