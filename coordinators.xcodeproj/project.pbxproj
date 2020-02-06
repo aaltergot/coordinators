@@ -27,6 +27,19 @@
 		17856E3E0E5654F7E9EC89AC /* FeedTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178563555CB37798F09630B3 /* FeedTabPresenter.swift */; };
 		17856E6FF4148DDF9D43130A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856106AB8648B95A86DD10 /* ProfileViewController.swift */; };
 		17856EEA034CB65E9CC1E0FB /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17856B0230E7610F5F14937F /* FeedPresenter.swift */; };
+		259257BE23EA7530002FACAF /* AppServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259257BD23EA7530002FACAF /* AppServiceLocator.swift */; };
+		259257C023EA754E002FACAF /* SelfStudyServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259257BF23EA754E002FACAF /* SelfStudyServiceLocator.swift */; };
+		259257C223EA766B002FACAF /* LeadGenServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259257C123EA766B002FACAF /* LeadGenServiceLocator.swift */; };
+		259257C423EA7715002FACAF /* CredentialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259257C323EA7715002FACAF /* CredentialStore.swift */; };
+		259257C623EA777B002FACAF /* UserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259257C523EA777B002FACAF /* UserInfoService.swift */; };
+		259257C823EA7C6C002FACAF /* SplitTestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259257C723EA7C6C002FACAF /* SplitTestService.swift */; };
+		259257CD23EA7DEB002FACAF /* BookIntroLessonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259257CC23EA7DEB002FACAF /* BookIntroLessonService.swift */; };
+		259257D623EA7F77002FACAF /* LeadGenPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259257D323EA7F77002FACAF /* LeadGenPagePresenter.swift */; };
+		259257D723EA7F77002FACAF /* LeadGenPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259257D423EA7F77002FACAF /* LeadGenPageViewController.swift */; };
+		259257D823EA7F77002FACAF /* LeadGenPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 259257D523EA7F77002FACAF /* LeadGenPageViewController.xib */; };
+		259257DC23EA87CB002FACAF /* SelfStudyPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259257D923EA87CB002FACAF /* SelfStudyPagePresenter.swift */; };
+		259257DD23EA87CB002FACAF /* SelfStudyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259257DA23EA87CB002FACAF /* SelfStudyPageViewController.swift */; };
+		259257DE23EA87CB002FACAF /* SelfStudyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 259257DB23EA87CB002FACAF /* SelfStudyPageViewController.xib */; };
 		41AA815522817B6000AFB22E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA815422817B6000AFB22E /* AppDelegate.swift */; };
 		41AA815C22817B6100AFB22E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41AA815B22817B6100AFB22E /* Assets.xcassets */; };
 		41AC13162283131700D0A888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AA815D22817B6100AFB22E /* LaunchScreen.storyboard */; };
@@ -67,6 +80,19 @@
 		17856B0230E7610F5F14937F /* FeedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		17856B220FCF4571F4454F18 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		17856CD27EA15A4265BEBD8C /* ProfileCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		259257BD23EA7530002FACAF /* AppServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServiceLocator.swift; sourceTree = "<group>"; };
+		259257BF23EA754E002FACAF /* SelfStudyServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfStudyServiceLocator.swift; sourceTree = "<group>"; };
+		259257C123EA766B002FACAF /* LeadGenServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadGenServiceLocator.swift; sourceTree = "<group>"; };
+		259257C323EA7715002FACAF /* CredentialStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialStore.swift; sourceTree = "<group>"; };
+		259257C523EA777B002FACAF /* UserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoService.swift; sourceTree = "<group>"; };
+		259257C723EA7C6C002FACAF /* SplitTestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitTestService.swift; sourceTree = "<group>"; };
+		259257CC23EA7DEB002FACAF /* BookIntroLessonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookIntroLessonService.swift; sourceTree = "<group>"; };
+		259257D323EA7F77002FACAF /* LeadGenPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadGenPagePresenter.swift; sourceTree = "<group>"; };
+		259257D423EA7F77002FACAF /* LeadGenPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadGenPageViewController.swift; sourceTree = "<group>"; };
+		259257D523EA7F77002FACAF /* LeadGenPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeadGenPageViewController.xib; sourceTree = "<group>"; };
+		259257D923EA87CB002FACAF /* SelfStudyPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfStudyPagePresenter.swift; sourceTree = "<group>"; };
+		259257DA23EA87CB002FACAF /* SelfStudyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfStudyPageViewController.swift; sourceTree = "<group>"; };
+		259257DB23EA87CB002FACAF /* SelfStudyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelfStudyPageViewController.xib; sourceTree = "<group>"; };
 		41AA815122817B6000AFB22E /* coordinators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coordinators.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AA815422817B6000AFB22E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41AA815B22817B6100AFB22E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,7 +127,7 @@
 		17856011ADE9106362D459FE /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				17856626A9667A479B3C026F /* LoginService.swift */,
+				259257BC23EA750C002FACAF /* ServiceLocator */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -179,6 +205,91 @@
 				17856342868E076F95088E81 /* Profile */,
 				17856A5067EED3BFBF312F8D /* Settings */,
 				1785657E493DA4B458D68AE9 /* ProfileCoordinator */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		259257BC23EA750C002FACAF /* ServiceLocator */ = {
+			isa = PBXGroup;
+			children = (
+				259257CE23EA7E12002FACAF /* SharedServices */,
+				259257CB23EA7DBB002FACAF /* LeadGenCoreFeature */,
+				259257CA23EA7DAA002FACAF /* SelfStudyCoreFeature */,
+				259257C923EA7DA4002FACAF /* App */,
+			);
+			path = ServiceLocator;
+			sourceTree = "<group>";
+		};
+		259257C923EA7DA4002FACAF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				259257BD23EA7530002FACAF /* AppServiceLocator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		259257CA23EA7DAA002FACAF /* SelfStudyCoreFeature */ = {
+			isa = PBXGroup;
+			children = (
+				259257D223EA7EB2002FACAF /* Modules */,
+				259257D123EA7EAC002FACAF /* Services */,
+			);
+			path = SelfStudyCoreFeature;
+			sourceTree = "<group>";
+		};
+		259257CB23EA7DBB002FACAF /* LeadGenCoreFeature */ = {
+			isa = PBXGroup;
+			children = (
+				259257D023EA7E9D002FACAF /* Modules */,
+				259257CF23EA7E97002FACAF /* Services */,
+			);
+			path = LeadGenCoreFeature;
+			sourceTree = "<group>";
+		};
+		259257CE23EA7E12002FACAF /* SharedServices */ = {
+			isa = PBXGroup;
+			children = (
+				17856626A9667A479B3C026F /* LoginService.swift */,
+				259257C323EA7715002FACAF /* CredentialStore.swift */,
+				259257C523EA777B002FACAF /* UserInfoService.swift */,
+				259257C723EA7C6C002FACAF /* SplitTestService.swift */,
+			);
+			path = SharedServices;
+			sourceTree = "<group>";
+		};
+		259257CF23EA7E97002FACAF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				259257CC23EA7DEB002FACAF /* BookIntroLessonService.swift */,
+				259257C123EA766B002FACAF /* LeadGenServiceLocator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		259257D023EA7E9D002FACAF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				259257D323EA7F77002FACAF /* LeadGenPagePresenter.swift */,
+				259257D423EA7F77002FACAF /* LeadGenPageViewController.swift */,
+				259257D523EA7F77002FACAF /* LeadGenPageViewController.xib */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		259257D123EA7EAC002FACAF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				259257BF23EA754E002FACAF /* SelfStudyServiceLocator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		259257D223EA7EB2002FACAF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				259257D923EA87CB002FACAF /* SelfStudyPagePresenter.swift */,
+				259257DA23EA87CB002FACAF /* SelfStudyPageViewController.swift */,
+				259257DB23EA87CB002FACAF /* SelfStudyPageViewController.xib */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -358,6 +469,8 @@
 				178562FEF6B40D04258A9D04 /* LoginViewController.xib in Resources */,
 				17856950F4A17D410F974395 /* ProfileViewController.xib in Resources */,
 				178564E78DD4EE8183AC871A /* SettingsViewController.xib in Resources */,
+				259257D823EA7F77002FACAF /* LeadGenPageViewController.xib in Resources */,
+				259257DE23EA87CB002FACAF /* SelfStudyPageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,24 +488,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				259257BE23EA7530002FACAF /* AppServiceLocator.swift in Sources */,
 				41E5655922885BDB007ECBCC /* FeedViewController.swift in Sources */,
 				41AA815522817B6000AFB22E /* AppDelegate.swift in Sources */,
+				259257CD23EA7DEB002FACAF /* BookIntroLessonService.swift in Sources */,
 				165E7ACB22FBE602001157FD /* ProfileRouter.swift in Sources */,
 				17856E3E0E5654F7E9EC89AC /* FeedTabPresenter.swift in Sources */,
+				259257C823EA7C6C002FACAF /* SplitTestService.swift in Sources */,
 				17856C2C719DEB8E35CA1784 /* FeedTabNavigationController.swift in Sources */,
 				1785642D5390048BB3CFF2CD /* LoginPresenter.swift in Sources */,
+				259257DD23EA87CB002FACAF /* SelfStudyPageViewController.swift in Sources */,
 				1785647FD97749F0F964B317 /* LoginViewController.swift in Sources */,
+				259257DC23EA87CB002FACAF /* SelfStudyPagePresenter.swift in Sources */,
 				17856AC607DE84A1AED232BD /* RootPresenter.swift in Sources */,
 				178566A045F4AB4EEE0496FC /* RootNavigationController.swift in Sources */,
 				17856A5F573608AD90C219E6 /* LoginService.swift in Sources */,
+				259257C223EA766B002FACAF /* LeadGenServiceLocator.swift in Sources */,
+				259257D623EA7F77002FACAF /* LeadGenPagePresenter.swift in Sources */,
+				259257C623EA777B002FACAF /* UserInfoService.swift in Sources */,
 				1785688F93DA520DDBAE4B23 /* MainTabBarPresenter.swift in Sources */,
 				178568302AD1D0D124A2EB3F /* MainTabBarController.swift in Sources */,
+				259257D723EA7F77002FACAF /* LeadGenPageViewController.swift in Sources */,
+				259257C423EA7715002FACAF /* CredentialStore.swift in Sources */,
 				1785692246B390CC6993B95F /* ProfilePresenter.swift in Sources */,
 				17856E6FF4148DDF9D43130A /* ProfileViewController.swift in Sources */,
 				1785680920C75528C6A46271 /* SettingsPresenter.swift in Sources */,
 				17856CFB85311FF235F677AE /* SettingsViewController.swift in Sources */,
 				178564313A60753D7B6F1C1F /* RootCoordinator.swift in Sources */,
 				17856EEA034CB65E9CC1E0FB /* FeedPresenter.swift in Sources */,
+				259257C023EA754E002FACAF /* SelfStudyServiceLocator.swift in Sources */,
 				178564F0643916AC4BED78CC /* ProfileCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

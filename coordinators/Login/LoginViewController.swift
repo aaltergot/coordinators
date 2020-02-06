@@ -33,7 +33,7 @@ extension LoginViewController: LoginView{
 extension LoginViewController {
 
     convenience init(
-        loginService: LoginService = LoginServiceImpl.shared,
+        loginService: LoginService = AppServiceLocator.shared.loginService,
         out: @escaping LoginOut
     ) {
         self.init(nibName: String(describing: LoginViewController.self), bundle: nil)
